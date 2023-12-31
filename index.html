@@ -1,0 +1,2008 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Junior GD</title>
+    <!-- <link rel="shortcut icon" href="favicon.ico"> -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- <meta http-equiv="Content-type" content="text/html;charset=UTF-8"> -->
+  	<!-- <link rel="shortcut icon" href="/static/favicon.png"> -->
+    <!-- <link rel="shortcut icon" href="favicon.png"> -->
+
+    <!-- css -->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="font.css">
+    <link rel="stylesheet" href="pp.css">
+    <link rel="stylesheet" href="ppdetail.css">
+    <link rel="stylesheet" href="index_media.css">
+
+    <!-- script: index_ie.js -->
+    <script type="text/javascript" src="index_ie.js"></script>
+
+    <!-- script: Masonry -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- <h1 id='time'></h1> -->
+    <!-- <script>
+        var now = new Date();
+        var hours = now.getHours();
+        var ft = now.toLocaleString("en-US", {
+            hour: "numeric",
+            minute: "numeric",
+            hour12: true
+        });
+        if (5 <= hours && hours < 8) {//Morning
+            document.write('<body style="background: #F3904F; background: -webkit-linear-gradient(to right, #3B4371, #F3904F); background: linear-gradient(to right, #3B4371, #F3904F); color: white">');
+            var type = "Morning";
+        }
+        if (8 <= hours && hours < 17) {//Day
+            document.write('<body style="background: #355C7D; background: -webkit-linear-gradient(0deg, rgba(0,197,93,1) 0%, rgba(255,255,255,1) 50%, rgba(251,176,255,1) 100%); background: linear-gradient(0deg, rgba(0,197,93,1) 0%, rgba(255,255,255,1) 50%, rgba(251,176,255,1) 100%);">');
+            var type = "Daytime";
+        }
+        if (17 <= hours && hours < 19) {//Evening
+            document.write('<body style="background: #b0cdff; background: -webkit-linear-gradient(0deg, rgba(251,176,255,1) 0%, rgba(255,255,255,1) 50%, rgba(176,205,255,1) 100%); background: linear-gradient(0deg, rgba(251,176,255,1) 0%, rgba(255,255,255,1) 50%, rgba(176,205,255,1) 100%);">');
+            var type = "Evening";
+        }
+        if (19 <= hours && hours < 5) {//Night
+            document.write('<body style="background: #0f2027; background: -webkit-linear-gradient(to right, #0f2027, #203a43, #2c5364);  background: linear-gradient(to right, #0f2027, #203a43, #2c5364); color : white">');
+            var type = "Nighttime";
+        }
+        document.getElementById("time").innerHTML = `The time is ${ft} it is ${type}`;
+    </script> -->
+
+    <!-- Menu ================================================================== -->
+
+    <style>
+      .menu-bg {
+        position: fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height: 60px;
+        background: #fbb0ff;
+        background: linear-gradient(0deg, rgba(251,176,255,0) 0%, rgba(251,176,255,1) 50%, rgba(251,176,255,1) 100%);
+        z-index: 2;
+      }
+    </style>
+    <div class="menu-bg"></div>
+    <div class="menu-top-left">
+      <button class="menu-index font-menu" onclick="location.href='index.html'" type="button">
+        Junior GD |
+      </button>
+    </div>
+
+    <div class="menu-top-right">
+      <button id="row1" class="menu-btn font-menu" style="padding-right:5px;" onclick="menuProjects()" type="button">
+        Project
+      </button>
+      <button id="row2" class="menu-btn font-menu" style="padding-left:5px; padding-right:5px;" onclick="menuSyllabus()" type="button">
+        Syllabus
+      </button>
+      <button id="row3" class="menu-btn font-menu" style="padding-left:5px; padding-right:5px;" onclick="menuSchedule()" type="button">
+        Schedule
+      </button>
+      <button id="row4" class="menu-btn font-menu menu-arena" style="padding-left:5px;" onclick="menuArena()" type="button">
+        Arena
+      </button>
+      <!-- <button class="menu-btn font-menu" style="padding-left:5px;" onclick="javascript:window.open('https://www.are.na/fall-2023-bu-junior-graphic-design', '_blank');" type="button">
+        Arena
+      </button> -->
+    </div>
+    
+    
+
+    <div class="menu-center-left" style="display: none;">
+      <button id="openDoor" class="open-door menu-door font-menu">
+        Open The Door
+      </button>
+    </div>
+
+    <div class="menu-bottom-left" style="pointer-events: none; display: none;">
+      <div class="menu-time font-menu">
+        <div date="current">12/00/2022</div>
+        <div class="w-embed">
+          <script>
+          (() => {
+          const currentScript = document.currentScript; const wrapper = currentScript.closest('.w-embed').parentElement;
+          const currentDate = wrapper.querySelector('[date="current"]');
+          const options = {}
+          for (let key of ["weekday", "year","month", "day", "dateStyle"]) {
+            if (currentDate.dataset[key]) {
+             options[key] = currentDate.dataset[key];
+            }
+          }
+          currentDate.textContent = new Date().toLocaleDateString([], options);
+          })();
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div id="middle"></div> -->
+
+    <!-- <div class="menu-bottom-right">
+      <button id="row4" class="menu-btn font-menu" style="padding-left:5px;" onclick="menuArena()" type="button">
+        Are.na
+      </button>
+    </div> -->
+
+
+    <!-- <div style="position:fixed; width: 100%; height: 88px; background: linear-gradient(0deg, rgba(0,204,0,0) 0%, rgba(0,204,0,1) 100%);">
+    </div> -->
+
+
+
+    <!-- Body: Projects ================================================================== -->
+    <div id="main" class="row1">
+      <div class="main-scrollContents">
+        <div style="height: 20px;"></div>
+
+        <div class="main-L">
+          <h3>PROJECT 3: NARRATIVE</h3>
+          <h4>
+            Through our past projects, we've engaged with various forms of media. What medium do you believe best conveys your voice? How can you connect most closely with your target audience? Our final project will be conducted in a free format.
+            <br><br>
+            You're welcome to use the media we've covered so far (but in a different way). For example, you could add an interview or narrative page to your archive website. Or, you can turn your archive website or narrative video into a zine.
+            <br><br>
+            Alternatively, you could explore an entirely new medium. There are many options such as Instagram, performance, installation, and more.
+            <br><br>
+            During the process of working on the final project, it's encouraged to develop your previous projects. For the final presentation, you should bring in all the projects you've done in this class.
+          </h4><br><br>
+          <hr><br><br>
+
+          <h3>11/14: Intro to Project 3</h3>
+          <h4>
+            <ul class="bullet">
+              <li class="link" style="padding-bottom: 0;"><a href = "https://docs.google.com/presentation/d/1eog_rpBDOYjUFLH5lxkiHfgQ1PgHZ2E5nzWCegkN48Q/edit?usp=sharing" target="_blank">Google Slides</a></li>
+            </ul>
+          </h4><br>
+          <hr><br><br>
+
+          <h3>11/16: AR Workshop</h3>
+          <h4>
+            <ul class="bullet">
+              <li class="link" style="padding-bottom: 0;"><a href = "https://spark.meta.com" target="_blank">Spark AR</a></li>
+              <li class="link" style="padding-bottom: 0;"><a href = "https://drive.google.com/drive/u/2/folders/1xegZsTQiTyWaDUvI_ThFLW8biTm8pAlg" target="_blank">Google Drive</a></li>
+              <li class="link" style="padding-bottom: 0;"><a href = "https://docs.google.com/presentation/d/1qZPFx_CkDtRqLUCG2cgLznARdFUn_WcRI92lu6pYiC8/edit#slide=id.p" target="_blank">Google Slides: Workshop Guideline</a></li>
+            </ul>
+          </h4><br>
+          <hr><br><br>
+
+          <h3>~11/26: Google Drive Upload</h3>
+          <h4>
+            <ul class="bullet">
+              <li>Key images of your zine (multiple)<br>
+                  : 2400 x 2400 px (recommend 300 dpi)<br>
+                  : png, jpg and/or mp4, GIF<br>
+                  : RGB color mode<br>
+                  : For GIFs, it's okay if they are smaller than 2400 px<br>
+                  : Recommend using a scanner for better resolution<br>
+                  : Include main features of your zine
+              </li>
+              <li>Promo video(s)<br>
+                  : 1080 x 1080 px<br>
+                  : mp4
+              </li>
+            </ul>
+
+            <ul class="bullet">
+              <li class="link" style="padding-bottom: 0;"><a href = "https://drive.google.com/drive/u/2/folders/10_HItBEuQdXWs8IkLNkOE6_9Z6vYpQB0" target="_blank">Google Drive</a></li>
+              <li class="link" style="padding-bottom: 0;"><a href = "https://docs.google.com/presentation/d/1tAx-ubh3xzNXYaK22km0MrDgeaA9NWNn8y1_FymfMNI/edit?usp=sharing" target="_blank">Google Slides: Guideline</a></li>
+            </ul> 
+          </h4><br>
+          <hr><br><br>
+          
+          <h3>11/30: Presentation (5 min)</h3>
+          <h4>
+            <ul class="bullet">
+              <li>Please share the current progress of your work</li>
+              <li>Explain what your project’s main focus is (ex: focus more on different formats, graphic design itself, narratives …)</li>
+            </ul>
+          </h4><br>
+          <hr><br><br>
+
+          <h3>12/5: INDIVIDUAL MEETING SIGN UP</h3>
+          <h4>
+            <ul class="bullet">
+              <li class="link" style="padding-bottom: 0;"><a href = "https://docs.google.com/document/d/1mAHk1wydSXJjNEr8zYQ9Sj0MxT-0FLDM2qRwl9EsoR0/edit?usp=sharing" target="_blank">Sign Up!</a></li>
+              <li class="link" style="padding-bottom: 0;"><a href = "https://docs.google.com/presentation/d/1kCTgVReyxoXDlEJ4NhY9C3kh7XrVacsLAjNRYMoLZDk/edit?usp=sharing" target="_blank">Google Slides: Upcoming Schedule</a></li>
+            </ul> 
+          </h4><br>
+          <hr><br><br>
+
+          <h3>12/7: Final Presentation</h3>
+          <h4>
+            <ul class="bullet">
+              <li>Please bring every project you made during this class</li>
+              <li>Feel free to use the classroom space if your work is installation (Using a projector is not required if you prefer to display your work on the wall)</li>
+              <li>Give your peers as much feedback as possible !</li>
+            </ul>
+          </h4><br>
+          <hr><br><br>
+
+          <h3>12/12: Junior Reviews</h3>
+          <h4>
+            <ul class="bullet">
+              <li>10 AM — 12 PM<br>
+                  1st Group: 10 AM<br>
+                  2nd Group: 11 AM</li>
+              <li>Room 409, 410, 411 (4th floor of 808 Commonwealth)</li>
+              <li>Salon-style Review: each student is assigned a physical space (wall spaces, corner spaces) and the group of invited critics is invited to circulate</li>
+              <li>The invited critics each meet with four students (minimum), with each student ultimately receiving a review by four to six critics</li>
+            </ul>
+
+            <ul class="bullet">
+              <li class="link" style="padding-bottom: 0;"><a href = "https://docs.google.com/document/d/1gXpQpSKhmgyGgB_j4u8MBk4Fu1sL6g2L1zytDUnp2EQ/edit?usp=sharing" target="_blank">If you need a specific time slot or 10-12pm doesn't work for you, leave your name here</a></li>
+              <li class="link" style="padding-bottom: 0;"><a href = "https://docs.google.com/presentation/d/1wjcMSO2yal97brH9--JIGLQwTnP6yP7OQQXccRqFljk/edit?usp=sharing" target="_blank">Google Slides</a></li>
+            </ul> 
+          </h4><br>
+          <hr><br><br>
+
+          <h3>~12/17: Google Drive Upload</h3>
+          <h4>
+            <ul class="bullet">
+              <li>Key images of your work (multiple)<br>
+                  : 2400 x 2400 px (recommend 300 dpi)<br>
+                  : png, jpg and/or mp4, GIF<br>
+                  : RGB color mode<br>
+                  : For GIFs, it's okay if they are smaller than 2400 px<br>
+                  : Recommend using a scanner for better resolution
+              </li>
+              <li>Descriptions of Projects 1, 2, 3 (respectively)<br>
+                  : around 250 words for each project<br>
+                  : Google Docs
+              </li>
+            </ul>
+
+            <ul class="bullet">
+              <li class="link" style="padding-bottom: 0;"><a href = "https://drive.google.com/drive/folders/1tP10K1VgCBpM3Pk8LldBwLS47Avrjl0m?usp=drive_link" target="_blank">Google Drive</a></li>
+              <li class="link" style="padding-bottom: 0;"><a href = "https://docs.google.com/presentation/d/1OUElipvLtbGdFuY3tlgcJjY6jOWl3NgOIRb0u_4j-dk/edit?usp=sharing" target="_blank">Google Slides: Guideline</a></li>
+            </ul> 
+          </h4><br>
+          <hr><br><br>
+
+        </div>
+
+        <div class="main-R">
+          <iframe style="position: absolute; top:0; right: 0; width: 100%; height: 100%; padding: 0; border: 0px solid; overflow: hidden;" src="https://bu-resource-mini.glitch.me"></iframe>
+        </div>
+
+        <div style="height: 20px;"></div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="ppdetail.js"></script>
+
+
+    <!-- Body: Syllabus ================================================================== -->
+    <div class="row2">
+      <div class="scrollContents">
+        <div style="height: 20px;"></div>
+
+        <div class="col2">
+          <h3 style="text-indent: 0px;">
+            <div>
+              <h3>
+                BU Fall 2023
+              </h3>
+              <h3>
+                Junior Graphic Design —<br>
+                Audience, Authorship
+              </h3>
+            </div>
+          </h3>
+          <h3 style="text-indent: 0px;">
+            <div>
+              <h3>
+                CFA AR 381
+              </h3>
+              <h3>
+                CREDIT 4<br>
+                Location: Room 357
+              </h3>
+            </div>
+          </h3>
+        </div>
+
+        <br>
+
+        <div class="col2">
+          <h3 style="text-indent: 0px;">
+            <div>
+              <h3 style="display: grid; grid-template-columns: 120px auto;">
+                <ul>
+                  <li>
+                    Instructor:
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <ul class="bulletS">
+                      <li class="link"><a href = "https://leehalim.com" target="_blank">Halim Lee</a></li>
+                      <li class="link"><a href = "mailto: halim@bu.edu">halim@bu.edu</a></li>
+                      <!-- <li class="link"><a href="https://leehalim.com" target="_blank">leehalim.com</a></li> -->
+                    </ul>
+                  </li>
+                </ul>
+              </h3>
+              <br>
+              <h3 style="display: grid; grid-template-columns: 140px auto;">
+                <ul>
+                  <li>
+                    Office Hours:
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    Fri 1:00 — 5:00 pm<br>
+                    by appointment
+                  </li>
+                </ul>
+              </h3>
+            </div>
+          </h3>
+
+          <h3 style="text-indent: 0px;">
+            <div>
+              <h3 style="display: grid; grid-template-columns: 45px auto;">
+                <ul>
+                  <li>
+                    A1 |
+                  </li>
+                  <li>
+                    C1 |
+                  </li>
+                  <br>
+                </ul>
+                <ul>
+                  <li>
+                    Tue/Thur 12:30 — 3:15 PM
+                  </li>
+                  <li>
+                    Tue/Thur &nbsp;6:30 — 9:15 PM
+                  </li>
+                  <br>
+                </ul>
+              </h3>
+              <h3 style="display: grid; grid-template-columns: 85px auto;">
+                <ul>
+                  <li>
+                    A1 | TA: 
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    Eric Lin
+                    <ul class="bulletS">
+                      <li class="link"><a href = "mailto: chiwei@bu.edu">chiwei@bu.edu</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </h3>
+              <h3 style="display: grid; grid-template-columns: 85px auto;">
+                <ul>
+                  <li>
+                    C1 | TA:
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    Lauren Greenblat
+                    <ul class="bulletS">
+                      <li class="link"><a href = "mailto: laurenhg@bu.edu">laurenhg@bu.edu</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </h3>
+            </div>
+            <br>
+            <div>
+            </div>
+          </h3>
+        </div>
+        <br>
+
+        <div class="col2" style="text-indent: 0px;">
+          <div>
+            <h3>Description</h3>
+            <h4>
+              Junior Graphic Design exercises a student’s knowledge of graphic design fundamentals — form development and communication strategies — to solve more complex design problems. Variables such as audience, context, authorship, and issues relevant to contemporary practice will be investigated and discussed. Context-driven platforms for communication will be explored as students consider how to reach both narrow and broad audiences across multiple mediums. Effective Fall 2020, this course fulfills a single unit in each of the following BU Hub areas: Research and Information Literacy, Teamwork/Collaboration.
+            </h4><br><br>
+
+            <h3>Learning Outcomes</h3>
+            <h4><ul class="bullet">
+              <li>Discover the authorial voice and intended target audience</li>
+              <li>Conduct in-depth research on the subject (*HUB-focused)</li>
+              <li>Translate the subject matter into diverse and unique visual forms</li>
+              <li>Develop a collaborative research archive throughout the semester (*HUB-focused)</li>
+              <li>Improve results through peer feedback and discussion (*HUB-focused)</li>
+              <li>Enhance skills and capabilities for working with diverse media</li>
+              <li>Improve abilities to produce visually refined outputs</li>
+              <li>Cultivate creativity for innovative thinking</li>
+            </ul></h4><br>
+
+            <h3>Course Expectations</h3>
+            <h4><ul class="bullet">
+              <li>We all take on the roles of mentors to one another in this class. Do not hesitate to give feedback and insights to your peers. Our class is composed of individuals with diverse skill sets. Let’s make the most use of this opportunity.</li>
+              <li>Creativity works best when we are in a safe, open, and transparent space. We respect all class members and support each other.</li>
+              <li>We will use the Are.na as our collaborative repository. All class members are expected to actively share new information and insights to our gorup Are.na channel.</li>
+              <li>This class includes workshops to learn new tools and software. There might be challenges along the way. Don't hesitate to ask for help if you're stuck. Use office hours or ask questions on the class website. All class members are expected to actively help their peers on the class website.</li>
+              <li>All innovation comes from taking risks. Do not be afraid to take risks with your projects and ideas.</li>
+              <li>Having audiences will motivate your creativity. Publish your work to reach your real audience.</li>
+            </ul></h4><br>
+
+            <h3>Required Supplies & Courseware</h3>
+            <h4>
+              <ul class="bullet">
+                <li style="padding-bottom: 0;">Laptop<br>
+                  +
+                </li>
+              </ul>
+              <ul class="bullet">
+                <li class="link" style="padding-bottom: 0;"><a href = "https://www.adobe.com/creativecloud.html" target="_blank">Adobe Creative Cloud</a></li>
+                <li class="link" style="padding-bottom: 0;"><a href = "https://drive.google.com/drive/u/3/folders/1feo5lT7g5I1fV1QzVu-MFqAQj1oQS4Tx" target="_blank">Google Drive</a></li>
+                <li class="link" style="padding-bottom: 0;"><a href = "https://https://are.na" target="_blank">Are.na</a></li>
+                <li class="link" style="padding-bottom: 0;"><a href = "https://cargo.site" target="_blank">Cargo</a></li>
+                <li class="link" style="padding-bottom: 0;"><a href = "https://glitch.com" target="_blank">Glitch</a></li>
+              </ul>
+            </h4><br><br>
+
+            <h3>Materials & Cost</h3>
+            <h4><ul class="bullet">
+              <li>Project 2 requires payment for printing and materials to create a publication.</li>
+              <li>Having a ruler or tape measure is advisable.</li>
+            </ul></h4><br>
+            <hr><br><br>
+
+            <!-- <h3>​​Course Policies</h3> -->
+            <h3>Disability Statement</h3>
+            <h4>
+              Students who have self-identified, provided documentation of their disability, and requested reasonable accommodations may be entitled to receive approved modifications in the classroom, appropriate academic adjustments, or auxiliary aids that enable them to participate in and benefit from all educational programs and activities. Please see http://www.bu.edu/disability for more details.  
+            </h4><br><br>
+
+            <h3>Attendance & Absences</h3>
+            <h4>
+              Please make every effort to arrive punctually. You must attend all the classes. According to the SVA Attendance Policy, unless specific permission for absence is arranged with the instructor of this course, students must attend class to receive credit for the course. Unexcused absences exceeding 1/4 of the total class hours in a given semester are considered excessive in all SVA courses. Tardiness and any unexcused absences will reduce your course grade. Three unexcused absences will reduce your semester grade by one step (e.g. A- to B+). Seven unexcused absences will earn you a failing grade for the course.  
+            </h4><br><br>
+
+            <h3>Project Submission</h3>
+            <h4>
+              All projects should be uploaded to the class Google Drive by the date specified in the class schedule. December 15 is the last day to upload all project files and materials. Files uploaded after this date will be rejected for your semester grade. 
+            </h4><br><br>
+
+            <h3>Wellness and Health</h3>
+            <h4>
+              Your health and well-being are important for your journey as a professional graphic designer. It is important to work hard and balance that with rest, self-care, and attention to your mental and physical health. I will challenge you in this class through assignments, activities, and discussions. However, the work in this class should not be at the expense of your well-being. If for any reason you are struggling to find balance in your work life and health/wellbeing, please reach out. I am happy to discuss ways in which this class can support you in your learning and growth. You can find more resources provided by BU CFA Mental Health & Wellness Resources.
+            </h4><br><br>
+            <!-- <hr><br><br> -->
+
+          </div>
+
+          <!-- --------------------------------------------------------------- -->
+
+          <div>
+            <h3>Project 0: Groundwork</h3>
+            <h4>
+              Authors are the ones who convey their thoughts and ideas through their work. Anyone can take on the role of an author as long as they wish to express their thoughts and can transform them into a shareable format.
+              <br><br>
+              Graphic design also involves an act of authorship. Whether it's branding, editorial work, web design, or any other branch of graphic design, we as graphic designers translate our thoughts into visual formats and communicate our message to the audience.
+              <br><br>
+              As part of the preparatory work for the following Projects 1, 2, and 3, we will establish the foundation to find your unique voice as an author and embody it to a visual format in Project 0.   
+            </h4><br><br>
+            <hr><br><br>
+
+            <h3>Project 1: Archive</h3>
+            <h4>
+              In Project 0, you conducted research and collected raw materials relevant to your subject. Some of these materials might serve as direct representations of your thoughts, expand upon your ideas, and strengthen your arguments.
+              <br><br>
+              Moving on to Project 1, you will design your own archival website, giving you the platform to express your ideas using the resources you've collected, either individually or collaboratively.  
+              <br><br>
+              A website functions as a living archive that continually accumulates new data in real time. We will learn how to construct an archival website utilizing the data we've amassed on Are.na, then proceed to publish it. This will enable your work to be accessible to the world and establish genuine connections with your audience. 
+            </h4><br><br>
+            <hr><br><br>
+
+            <h3>Project 2: Dialogue</h3>
+            <h4>
+              Exchanging ideas through discussion can lead our thoughts into deeper insights. In Project 2, you will conduct an interview to expand your voice and deep dive into your subject.
+              <br><br>
+              While a self-interview can help you access your thoughts, conversing with your peer or an expert can offer new knowledge and experiences. Conducting an interview can also provide you with the opportunity to build meaningful connections with individuals who share your interests and could potentially be the audience for your work.
+              <br><br>
+              You will use the outcomes of your interview to design a zine in Project 2. What characteristics are present in a dialogue, and what aspects should be considered when turning your interview into a physical publication? 
+            </h4><br><br>
+            <hr><br><br>
+
+            <h3>Project 3: Narrative</h3>
+            <h4>
+              Through our past projects, we've engaged with various forms of media. What medium do you believe best conveys your voice? How can you connect most closely with your target audience? Our final project will be conducted in a free format.
+              <br><br>
+              You're welcome to use the media we've covered so far (but in a different way). For example, you could add an interview or narrative page to your archive website. Or, you can turn your archive website or narrative video into a zine.
+              <br><br>
+              Alternatively, you could even explore an entirely new medium. There are many options such as Instagram, performance, installation, and more.
+              <br><br>
+              During the process of working on the final project, it's encouraged to develop your previous projects. For the final presentation, you should bring in all the projects you've done in this class.
+            </h4><br><br>
+            <hr><br><br>
+
+            <h3>Grading</h3>
+            <h4>
+              <ul class="bulletG6">
+                <li>Course assignments & Projects: ideation, visual ability, final deliverables</li>
+              </ul>
+              <ul class="bulletG2">
+                <li>Depth & Breadth: subject research, willingness to experiment, risk-taking</li>
+              </ul>
+              <ul class="bulletG2">
+                <li>Class participation & Contribution</li>
+              </ul>
+            </ul></h4><br><br>
+
+            <h3>Grades included in the GPA</h3>
+            <h4>
+            <div style="display: grid; grid-template-columns: 42px auto;">
+              <ul>
+                <li>A</li>
+              	<li>A −</li>
+              	<li>B +</li>
+              	<li>B</li>
+              	<li>B −</li>
+              	<li>C +</li>
+              	<li>C</li>
+              	<li>C −</li>
+              	<li>D</li>
+              	<li>F</li>
+              </ul>
+              <ul>
+                <li>4.000</li>
+              	<li>3.700</li>
+              	<li>3.300</li>
+              	<li>3.000</li>
+              	<li>2.700</li>
+              	<li>2.300</li>
+              	<li>2.000</li>
+              	<li>1.700</li>
+              	<li>1.300</li>
+              	<li>1.000</li>
+              	<li>0.000</li>
+              </ul>
+            </div></h4><br>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Body: Schedule ================================================================== -->
+
+    <!-- <iframe class="row2" src="https://docs.google.com/document/d/e/2PACX-1vR8bgohChbi-tddT489XzXIzgtbpDtOqJupDuR3ImzugtaX67yclT0HTjNZLHCVd1z2-LHyaZ7_kTnh/pub?embedded=true"></iframe> -->
+
+    <!-- <iframe class="row2" src="https://docs.google.com/document/d/16ojtY0OwTxDM9CVfURIKFBZFzpxmkwY1QLZCAXXv0QM/preview?usp=embed_googleplus"></iframe> -->
+
+    <!-- <iframe class="row2" src="https://docs.google.com/document/d/e/2PACX-1vRsR4zOHQSNikrawUwTKlBxrHncxjVKyKc9Zg1CYSce56dX_vIytJ4O4XMPMAlDlpFBMlnNYClDB0DP/pub?embedded=true"></iframe> -->
+
+    <div class="row3">
+      <div class="scrollContents-margin">
+        <div style="height: 20px;"></div>
+
+        <!-- Header ======================================== -->
+        <div class="tb4">
+          <h3 class="tb4Mo"> </h3>
+          <h3></h3>
+          <h3>In Class</h3>
+          <h3>After Class</h3>
+        </div>
+
+        <!-- Week1 ======================================== -->
+        <div class="tbW">
+          <div><h4 class="tb4Mo">Week1</h4></div>
+          <div class="tb3-1">
+            <!-- Week1-Day1: 9/5 ========================== -->
+            <h4>1 — 9/5</h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>Class Orientation</li>
+              <ul class="bulletS">
+              <li class="link"><a href="https://docs.google.com/presentation/d/19OdlA9CBJJy8jQlN9SuE6pntV-87KAgtVcHiwmnaTqM/edit?usp=sharing" target="_blank">Intro to GD Studio</a></li>
+              <li class="link"><a href="https://www.are.na/fall-2023-bu-junior-graphic-design" target="_blank">Are.na overview</a></li>
+              </ul>
+              <br>
+              <li>🄋<br>Groundwork</li>
+              <ul class="bulletS">
+              <li>Class Activity</li>
+              <li>Individual Meeting</li>
+              </ul>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+              <li>🄋<br>Groundwork</li>
+              <ul class="bulletS">
+              <li>Presentation (5 min)</li>
+              <li>Choose your interviewee</li>
+              </ul>
+              <br>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+          <div><h4 class="tb4Mo"></h4></div>
+          <div class="tb3-2">
+            <!-- Week1-Day2: 9/7 ========================== -->
+            <h4>2 — 9/7</h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>🄋<br>Groundwork</li>
+              <ul class="bulletS">
+              <li class="link"><a href="https://docs.google.com/document/d/1mAHk1wydSXJjNEr8zYQ9Sj0MxT-0FLDM2qRwl9EsoR0/edit" target="_blank">Presentation (5 min)</a></li>
+              <li class="link"><a href="https://docs.google.com/presentation/d/1tINT_op_ato4Jwuxl8PG7-HHR4d_1WYI3N9vsijUt9E/edit#slide=id.p" target="_blank">Lecture</a></li>
+              <li>Studio Time</li>
+              </ul>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+              <li>🄋<br>Groundwork</li>
+              <ul class="bulletS">
+              <li class="link"><a href="https://drive.google.com/drive/u/3/folders/1w953ZWPwS8RQYPWL0k9weATz2dUBAv4x" target="_blank">Visualization</a></li>
+              </ul>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+        </div>
+
+        <!-- Week2 ======================================== -->
+        <div class="tbW">
+          <div><h4 class="tb4Mo">Week2</h4></div>
+          <div class="tb3-1">
+            <!-- Week2-Day3: 9/12 ========================== -->
+            <h4>3 — 9/12</h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>🄋<br>Groundwork</li>
+              <ul class="bulletS">
+              <li class="link"><a href="https://docs.google.com/presentation/d/1tpHSHKvZVW1ML7_legQbHsPCKpBCosCJ3YqTVPJrReg/edit#slide=id.g27db65542cf_0_31" target="_blank">Class Activity</a></li>
+              <li>Group Discussion</li>
+              <li>Individual Meeting</li>
+              <li>Studio Time</li>
+              </ul>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+              <li>🄋<br>Groundwork</li>
+              <ul class="bulletS">
+              <li class="link"><a href="https://drive.google.com/drive/u/3/folders/1w953ZWPwS8RQYPWL0k9weATz2dUBAv4x" target="_blank">Visualization ~9/13 11:59 PM</a></li>
+              </ul>
+              <br>
+              <li>➊<br>Archive</li>
+              <ul class="bulletS">
+              <li>Sign up for <a href="https://cargo.site" target="_blank">Cargo</a> & <a href="https://glitch.com" target="_blank">Glitch</a></li>
+              </ul>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+          <div><h4 class="tb4Mo"></h4></div>
+          <div class="tb3-2">
+            <!-- Week2-Day4: 9/14 ========================== -->
+            <h4>4 — 9/14</h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>➊<br>Archive</li>
+              <ul class="bulletS">
+              <li class="link"><a href="https://docs.google.com/presentation/d/1uG4GVy7F0PltotZI-aw3FreEMvnldChbp1OBgh_4Uvc/edit?usp=sharing" target="_blank">Intro to Project 1</a></li>
+              <li class="link"><a href="https://docs.google.com/presentation/d/1R0Qsgd_kgWYjrT1Bg_9cH_Rb8E8I5gXyIaCoCet6c6Y/edit?usp=sharing" target="_blank">Workshop</a></li>
+              <li>Studio Time</li>
+              </ul>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+              <li>➊<br>Archive</li>
+              <ul class="bulletS">
+              <li>Create the 1st draft of your website</li>
+              </ul>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+        </div>
+          
+        <!-- Week3 ======================================== -->
+        <div class="tbW">
+          <div><h4 class="tb4Mo">Week3</h4></div>
+          <div class="tb3-1">
+            <!-- Week3-Day5: 9/19 ========================== -->
+            <h4>5 — 9/19</h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>➊<br>Archive</li>
+              <ul class="bulletS">
+              <li class="link" style="padding-bottom: 0;"><a href = "https://docs.google.com/presentation/d/1z5aHw8PRKmP5_kC0ms-2IqzCACXoJO5Wz48C55CORZk/edit?usp=sharing" target="_blank">Workshop (C1)</a></li>
+              <li>Individual Meeting</li>
+              <li>Studio Time</li>
+              </ul>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul> 
+              <li>➊<br>Archive</li>
+              <ul class="bulletS">
+              <li>Continue production</li>
+              </ul>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+          <div><h4 class="tb4Mo"></h4></div>
+          <div class="tb3-2">
+            <!-- Week3-Day6: 9/21 ========================== -->
+            <h4>6 — 9/21</h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>➊<br>Archive</li>
+              <ul class="bulletS">
+              <li class="link" style="padding-bottom: 0;"><a href = "https://docs.google.com/presentation/d/1z5aHw8PRKmP5_kC0ms-2IqzCACXoJO5Wz48C55CORZk/edit?usp=sharing" target="_blank">Workshop (A1)</a></li>
+              <li class="link" style="padding-bottom: 0;"><a href = "https://docs.google.com/presentation/d/1Y8PegQKFp035Lv9cgd1OHWoKlI9LUaljDS_fm5wxhqg/edit?usp=sharing" target="_blank">Workshop (C1)</a></li>
+              <li>Individual Meeting</li>
+              <li>Studio Time</li>
+              </ul>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+              <li>➊<br>Archive</li>
+              <ul class="bulletS">
+              <li>Continue production</li>
+              </ul>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+        </div>    
+
+        <!-- Week4 ======================================== -->
+        <div class="tbW">
+          <div><h4 class="tb4Mo">Week4</h4></div>
+          <div class="tb3-1">
+            <!-- Week4-Day7: 9/26 ========================== -->
+            <h4>7 — 9/26</h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>➊<br>Archive</li>
+              <ul class="bulletS">
+              <li class="link" style="padding-bottom: 0;"><a href = "https://docs.google.com/presentation/d/1lqJpfkJd18C2J920LutJoVzeVKYEAMwiQ86jG9DRQIQ/edit#slide=id.g2846d1e25c5_0_3" target="_blank">Workshop (C1)</a></li>
+              <li>Individual Meeting</li>
+              <li>Studio Time</li>
+              </ul>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+              <li>➊<br>Archive</li>
+              <ul class="bulletS">
+              <li>Presentation (5 min)</li>
+              <li>Continue production</li>
+              </ul>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+          <div><h4 class="tb4Mo"></h4></div>
+          <div class="tb3-2">
+            <!-- Week4-Day8: 9/28 ========================== -->
+            <h4>8 — 9/28</h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>➊<br>Archive</li>
+              <ul class="bulletS">
+              <li>Presentation (5 min)</li>
+              <li class="link" style="padding-bottom: 0;"><a href = "https://docs.google.com/presentation/d/1oHMbhq0UB5MZYXUznegC2vLYOyKzuUl8pWTGIus8FpI/edit?usp=sharing" target="_blank">Workshop (A1)</a></li>
+              <li>Studio Time</li>
+              </ul>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+              <li>➊<br>Archive</li>
+              <ul class="bulletS">
+              <li>Continue production</li>
+              </ul>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+        </div>   
+
+        <!-- Week5 ======================================== -->
+        <div class="tbW">
+          <div><h4 class="tb4Mo">Week5</h4></div>
+          <div class="tb3-1">
+            <!-- Week5-Day9: 10/3 ========================== -->
+            <h4>9 — 10/3</h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>➊<br>Archive</li>
+              <ul class="bulletS">
+              <li class="link"><a href="https://docs.google.com/presentation/d/1TMF-BiXpnUBxtksL_ffJfcPUgpufUFxEtBQ-iD9GwcI/edit?usp=sharing" target="_blank">Web Design Refinement</a></li>
+              <li>Individual Meeting</li>
+              </ul>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+              <li>➊<br>Archive</li>
+              <ul class="bulletS">
+              <li>Continue production</li>
+              </ul>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+          <div><h4 class="tb4Mo"></h4></div>
+          <div class="tb3-2">
+            <!-- Week5-Day10: 10/5 ========================== -->
+            <h4>10 — 10/5</h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>➊<br>Archive</li>
+              <ul class="bulletS">
+              <li class="link"><a href="https://docs.google.com/presentation/d/11vxerzq0ny85R6n6X9rop2MKhqIA7mAFrLz57Jy_2kQ/edit?usp=sharing" target="_blank">Upcoming Schedule</a></li>
+              <li>Individual Meeting</li>
+              </ul>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+              <li>➊<br>Archive</li>
+              <ul class="bulletS">
+              <li>Final Presentation</li>
+              <li>Continue production</li>
+              </ul>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+        </div> 
+
+        <!-- Week6 ======================================== -->
+        <div class="tbW">
+          <div><h4 class="tb4Mo">Week6</h4></div>
+          <div class="tb3-1">
+            <!-- No Class ========================== -->
+            <h4> </h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>No Class — Monday Schedule</li>
+              </ul>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+              <ul class="bulletS">
+              <li class="link"><a href="https://docs.google.com/document/d/1toadPYxMWFzH-I4sj-d0ncz87i21ZF0Ny0Qces_5P7E/edit" target="_blank">Submit your site URL (~10/11)</a></li>
+              </ul>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+          <div><h4 class="tb4Mo"></h4></div>
+          <div class="tb3-2">
+            <!-- Week6-Day11: 10/12 ========================== -->
+            <h4>11 — 10/12</h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>➊<br>Archive</li>
+              <ul class="bulletS">
+              <li>Final Presentation</li>
+              </ul>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+              <li>➊<br>Archive</li>
+              <ul class="bulletS">
+              <li class="link"><a href="https://drive.google.com/drive/u/2/folders/1MVVE7SNNxV9k8lwH-QB-aBgfDkg4ItM2" target="_blank">Google Drive Upload (~10/15)</a></li>
+              </ul>
+              <br>
+              <li>➋<br>Dialogue</li>
+              <ul class="bulletS">
+              <li>Conduct the interview and include the transcript in the 1st draft of your zine (~10/17)</li>
+              </ul>
+              </ul>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+        </div> 
+
+        <!-- Week7 ======================================== -->
+        <div class="tbW">
+          <div><h4 class="tb4Mo">Week7</h4></div>
+          <div class="tb3-1">
+            <!-- Week7-Day12: 10/17 ========================== -->
+            <h4>12 — 10/17</h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>➋<br>Dialogue</li>
+              <ul class="bulletS">
+              <li class="link"><a href="https://docs.google.com/presentation/d/1GfuahgxSZEhYOdEU4AZ4yGld1Bvj0xEHkR3WofeV-v4/edit?usp=sharing" target="_blank">Intro to Project 2</a></li>
+              <li>Individual Meeting</li>
+              </ul>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+              <li>➋<br>Dialogue</li>
+              <ul class="bulletS">
+              <li>Continue production</li>
+              </ul>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+          <div><h4 class="tb4Mo"></h4></div>
+          <div class="tb3-2">
+            <!-- Week7-Day13: 10/19 ========================== -->
+            <h4>13 — 10/19</h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>➋<br>Dialogue</li>
+              <ul class="bulletS">
+              <li class="link"><a href="https://docs.google.com/presentation/d/1buBoIm4CVHmdoq7HK5QfZrrOy0Zat-IpgVmEsuaNfs4/edit?usp=sharing" target="_blank">Riso Workshop 1</a></li>
+              <li>Individual Meeting</li>
+              </ul>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+              <li>➋<br>Dialogue</li>
+              <ul class="bulletS">
+              <li>Continue production</li>
+              </ul>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+        </div> 
+    
+        <!-- Week8 ======================================== -->
+        <div class="tbW">
+          <div><h4 class="tb4Mo">Week8</h4></div>
+          <div class="tb3-1">
+            <!-- Week8-Day14: 10/24 ========================== -->
+            <h4>14 — 10/24</h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>➋<br>Dialogue</li>
+              <ul class="bulletS">
+              <li class="link"><a href="https://docs.google.com/presentation/d/1buBoIm4CVHmdoq7HK5QfZrrOy0Zat-IpgVmEsuaNfs4/edit?usp=sharing" target="_blank">Riso Workshop 2</a></li>
+              <li>Group Discussion</li>
+              </ul>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+              <li>➋<br>Dialogue</li>
+              <ul class="bulletS">
+              <li>Continue production</li>
+              </ul>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+          <div><h4 class="tb4Mo"></h4></div>
+          <div class="tb3-2">
+            <!-- Week8-Day15: 10/26 ========================== -->
+            <h4>15 — 10/26</h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>➋<br>Dialogue</li>
+              <ul class="bulletS">
+              <li class="link"><a href="https://docs.google.com/presentation/d/1YN1QPEVWkkpbJ1Pj0zNtCmapGYgmum5zJYKnDJrSdT0/edit?usp=sharing" target="_blank">After Effects Workshop</a></li>
+              <li>Individual Meeting</li>
+              </ul>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+              <li>➋<br>Dialogue</li>
+              <ul class="bulletS">
+              <li>Presentation (5 min)</li>
+              <li>Promo Video 1st Draft</li>
+              <li>Continue production</li>
+              </ul>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+        </div> 
+
+        <!-- Week9 ======================================== -->
+        <div class="tbW">
+          <div><h4 class="tb4Mo">Week9</h4></div>
+          <div class="tb3-1">
+            <!-- Week9-Day16: 10/31 ========================== -->
+            <h4>16 — 10/31</h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>➋<br>Dialogue</li>
+              <ul class="bulletS">
+              <li>Presentation (5 min)</li>
+              </ul>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+              <li>➋<br>Dialogue</li>
+              <ul class="bulletS">
+              <li>Continue production</li>
+              </ul>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+          <div><h4 class="tb4Mo"></h4></div>
+          <div class="tb3-2">
+            <!-- Week9-Day17: 11/2 ========================== -->
+            <h4>17 — 11/2</h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>➋<br>Dialogue</li>
+              <ul class="bulletS">
+              <li>Individual Meeting</li>
+              </ul>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+              <li>➋<br>Dialogue</li>
+              <ul class="bulletS">
+              <li>Continue production</li>
+              </ul>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+        </div>
+
+        <!-- Week10 ======================================== -->
+        <div class="tbW">
+          <div><h4 class="tb4Mo">Week10</h4></div>
+          <div class="tb3-1">
+            <!-- Week10-Day18: 11/7 ========================== -->
+            <h4>18 — 11/7</h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>➋<br>Dialogue</li>
+              <ul class="bulletS">
+              <li>Individual Meeting</li>
+              </ul>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+              <li>➋<br>Dialogue</li>
+              <ul class="bulletS">
+              <li>Final Presentation</li>
+              <li>Continue production</li>
+              </ul>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+          <div><h4 class="tb4Mo"></h4></div>
+          <div class="tb3-2">
+            <!-- Week11-Day19: 11/9 ========================== -->
+            <h4>19 — 11/9</h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>➋<br>Dialogue</li>
+              <ul class="bulletS">
+              <li>Final Presentation</li>
+              </ul>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+              <li>❸<br>Narrative</li>
+              <ul class="bulletS">
+              <li>Bring your ideas & rough sketches for the final project</li>
+              </ul>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+        </div>
+
+        <!-- Week11 ======================================== -->
+        <div class="tbW">
+          <div><h4 class="tb4Mo">Week11</h4></div>
+          <div class="tb3-1">
+            <!-- Week11-Day20: 11/14 ========================== -->
+            <h4>20 — 11/14</h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>❸<br>Narrative</li>
+              <ul class="bulletS">
+              <li class="link"><a href="https://docs.google.com/presentation/d/1eog_rpBDOYjUFLH5lxkiHfgQ1PgHZ2E5nzWCegkN48Q/edit?usp=sharing" target="_blank">Intro to Project 3</a></li>
+              <li>Individual Meeting</li>
+              </ul>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+              <li>❸<br>Narrative</li>
+              <ul class="bulletS">
+              <li>Continue production</li>
+              </ul>
+              <br>
+              <li>➊➋<br>Archive & Dialogue</li>
+              <ul class="bulletS">
+              <li>Project Refinement</li>
+              </ul>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+          <div><h4 class="tb4Mo"></h4></div>
+          <div class="tb3-2">
+            <!-- Week11-Day21: 11/16 ========================== -->
+            <h4>21 — 11/16</h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>❸<br>Narrative</li>
+              <ul class="bulletS">
+              <li class="link"><a href="https://docs.google.com/presentation/d/1qZPFx_CkDtRqLUCG2cgLznARdFUn_WcRI92lu6pYiC8/edit?usp=sharing" target="_blank">AR Workshop</a></li>
+            </ul>
+              <br>
+              <li>➊➋<br>Archive & Dialogue</li>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+              <li>❸<br>Narrative</li>
+              <ul class="bulletS">
+              <li>Continue production</li>
+              </ul>
+              <br>
+              <li>➊➋<br>Archive & Dialogue</li>
+              <ul class="bulletS">
+              <li>Project Refinement</li>
+              </ul>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+        </div>
+
+        <!-- Week12 ======================================== -->
+        <div class="tbW">
+          <div><h4 class="tb4Mo">Week12</h4></div>
+          <div class="tb3-1">
+            <!-- Week12-Day22: 11/21 ========================== -->
+            <h4>22 — 11/21</h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>❸<br>Narrative</li>
+              <ul class="bulletS">
+              <li>Group Discussion</li>
+              <li>Individual Meeting</li>
+              </ul>
+              <br>
+              <li>➊➋<br>Archive & Dialogue</li>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+              <li>❸<br>Narrative</li>
+              <ul class="bulletS">
+              <li>Continue production</li>
+              </ul>
+              <br>
+              <li>➊➋<br>Archive & Dialogue</li>
+              <ul class="bulletS">
+              <li>Project Refinement</li>
+              </ul>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+          <div><h4 class="tb4Mo"></h4></div>
+          <div class="tb3-2">
+            <!-- Thanksgiving ========================== -->
+            <h4> </h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>Thanksgiving</li>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+              <li>➋<br>Dialogue</li>
+              <ul class="bulletS">
+              <li class="link"><a href="https://drive.google.com/drive/u/2/folders/10_HItBEuQdXWs8IkLNkOE6_9Z6vYpQB0" target="_blank">Google Drive Upload (~11/26)</a></li>
+              </ul>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+        </div>
+        
+        <!-- Week13 ======================================== -->
+        <div class="tbW">
+          <div><h4 class="tb4Mo">Week13</h4></div>
+          <div class="tb3-1">
+            <!-- Week13-Day23: 11/28 ========================== -->
+            <h4>23 — 11/28</h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>❸<br>Narrative</li>
+              <ul class="bulletS">
+              <li>Individual Meeting</li>
+              </ul>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+              <li>❸<br>Narrative</li>
+              <ul class="bulletS">
+              <li>Continue production</li>
+              </ul>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+          <div><h4 class="tb4Mo"></h4></div>
+          <div class="tb3-2">
+            <!-- Week13-Day24: 11/30 ========================== -->
+            <h4>24 — 11/30</h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>❸<br>Narrative</li>
+              <ul class="bulletS">
+              <li>Presentation (5 min)</li>
+              </ul>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+              <li>❸<br>Narrative</li>
+              <ul class="bulletS">
+              <li>Continue production</li>
+              </ul>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+        </div>
+
+        <!-- Week14 ======================================== -->
+        <div class="tbW">
+          <div><h4 class="tb4Mo">Week14</h4></div>
+          <div class="tb3-1">
+            <!-- Week14-Day25: 12/5 ========================== -->
+            <h4>25 — 12/5</h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>❸<br>Narrative</li>
+              <ul class="bulletS">
+              <li>Individual Meeting</li>
+              </ul>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+              <li>❸<br>Narrative</li>
+              <ul class="bulletS">
+              <li>Final Presentation</li>
+              <li>Continue production</li>
+              </ul>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+          <div><h4 class="tb4Mo"></h4></div>
+          <div class="tb3-2">
+            <!-- Week14-Day26: 12/7 ========================== -->
+            <h4>26 — 12/7</h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>❸<br>Narrative</li>
+              <ul class="bulletS">
+              <li>Final Presentation</li>
+              </ul>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+        </div>
+
+        <!-- Week15 ======================================== -->
+        <div class="tbW">
+          <div><h4 class="tb4Mo">Week15</h4></div>
+          <div class="tb3-1">
+            <!-- Week15-Day27: 12/12 ========================== -->
+            <h4>27 — 12/12</h4>
+            <!--In Class ---------------------------------- -->
+            <h4><ul>
+              <li>Junior Reviews</li>
+              <ul class="bulletS">
+              <li class="link" style="padding-bottom: 0;"><a href = "https://docs.google.com/presentation/d/1wjcMSO2yal97brH9--JIGLQwTnP6yP7OQQXccRqFljk/edit?usp=sharing" target="_blank">Google Slides</a></li>
+              </ul>
+            </ul></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+          <div><h4 class="tb4Mo"></h4></div>
+          <div class="tb3-2">
+            <!-- ~ 12/15 Final Package ========================== -->
+            <h4><div style="display: inline; color: transparent;">29 </div>— 12/15</h4>
+            <!--In Class ---------------------------------- -->
+            <h4></h4>
+            <!--After Class ------------------------------- -->
+            <h4><ul>
+              <li>🄋➊➋❸<br>Submit final package</li>
+            </ul></h4>
+            <!--------------------------------------------- -->
+          </div>
+        </div>
+
+
+        
+
+          <!-- 
+          
+          <div class="tb4">
+            <h4 class="tb4Mo"></h4>
+            <h4>2 — 9/7</h4>
+            <h4>
+              <ul>
+                <li>Project 0: Groundwork</li>
+                <ul class="bulletS">
+                  <li class="link"><a href="https://docs.google.com/document/d/1mAHk1wydSXJjNEr8zYQ9Sj0MxT-0FLDM2qRwl9EsoR0/edit" target="_blank">Presentation (5 min)</a></li>
+                  <li class="link"><a href="https://docs.google.com/presentation/d/1tINT_op_ato4Jwuxl8PG7-HHR4d_1WYI3N9vsijUt9E/edit#slide=id.p" target="_blank">Lecture</a></li>
+                  <li>Studio Time</li>
+                </ul>
+              </ul>
+            </h4>
+            <h4>
+              <ul>
+                <li>Project 0: Groundwork</li>
+                <ul class="bulletS">
+                  <li class="link"><a href="https://drive.google.com/drive/u/3/folders/1w953ZWPwS8RQYPWL0k9weATz2dUBAv4x" target="_blank">Visualization</a></li>
+                </ul>
+              </ul>
+            </h4>
+          </div> -->
+
+        
+
+
+        <!-- <div>
+          <div class="tb4">
+            <h3 class="tb4Mo"> </h3>
+            <h3></h3>
+            <h3>In Class</h3>
+            <h3>After Class</h3>
+          </div>
+
+          
+
+          <div class="tb4">
+            <h4 class="tb4Mo">Week2</h4>
+            <h4>3 — 9/12</h4>
+            <h4>
+              <ul>
+                <li>Project 0: Groundwork</li>
+                <ul class="bulletS">
+                  <li>Class Activity</li>
+                  <li>Group Discussion</li>
+                  <li>Studio Time</li>
+                  <li>1:1 Meeting</li>
+                </ul>
+              </ul>
+            </h4>
+            <h4>
+              <ul>
+                <li>Project 1: Archive</li>
+                <ul class="bulletS">
+                  <li>Sign up for Cargo & Glitch</li>
+                </ul>
+                <li style="color: transparent;">Project 0: GroundworkProject 0: GroundworProject 0: GroundworProject 0: Groundwor</li>
+              </ul>
+            </h4>
+          </div>
+
+          <div class="tb4">
+            <h4 class="tb4Mo"></h4>
+            <h4>4 — 9/14</h4>
+            <h4>
+              <ul>
+                <li>Project 1: Archive</li>
+                <ul class="bulletS">
+                  <li>Archive Website Workshop</li>
+                  <li>Studio Time</li>
+                </ul>
+              </ul>
+            </h4>
+            <h4>
+              <ul>
+                <li>Project 1: Archive</li>
+              </ul>
+            </h4>
+          </div>
+
+          <div class="tb4">
+            <h4 class="tb4Mo">Week3</h4>
+            <h4>5 — 9/19</h4>
+            <h4>
+              <ul>
+                <li>Project 1: Archive</li>
+              </ul>
+            </h4>
+            <h4>
+              <ul>
+                <li>Project 1: Archive</li>
+              </ul>
+            </h4>
+          </div>
+
+          <div class="tb4">
+            <h4 class="tb4Mo"></h4>
+            <h4>6 — 9/21</h4>
+            <h4>
+              <ul>
+                <li>Project 1: Archive</li>
+              </ul>
+            </h4>
+            <h4>
+              <ul>
+                <li>Project 1: Archive</li>
+              </ul>
+            </h4>
+          </div>
+
+          <div class="tb4">
+            <h4 class="tb4Mo">Week4</h4>
+            <h4>7 — 9/26</h4>
+            <h4>
+              <ul>
+                <li>Project 1: Archive</li>
+              </ul>
+            </h4>
+            <h4>
+              <ul>
+                <li>Project 1: Archive</li>
+              </ul>
+            </h4>
+          </div>
+
+          <div class="tb4">
+            <h4 class="tb4Mo"></h4>
+            <h4>8 — 9/28</h4>
+            <h4>
+              <ul>
+                <li>Project 1: Archive</li>
+              </ul>
+            </h4>
+            <h4>
+              <ul>
+                <li>Project 1: Archive</li>
+              </ul>
+            </h4>
+          </div>
+
+          <div class="tb4">
+            <h4 class="tb4Mo">Week5</h4>
+            <h4>9 — 10/3</h4>
+            <h4>
+              <ul>
+                <li>Project 1: Archive</li>
+              </ul>
+            </h4>
+            <h4>
+              <ul>
+                <li>Project 1: Archive</li>
+              </ul>
+            </h4>
+          </div>
+
+          <div class="tb4">
+            <h4 class="tb4Mo"></h4>
+            <h4>10 — 10/5</h4>
+            <h4>
+              <ul>
+                <li>Project 1: Archive</li>
+              </ul>
+            </h4>
+            <h4>
+              <ul>
+                <li>Project 1: Archive</li>
+              </ul>
+            </h4>
+          </div>
+
+          <div class="tb4">
+            <h4 class="tb4Mo">Week6</h4>
+            <h4>11 — 10/10</h4>
+            <h4>
+              <ul>
+                <li>Project 2: Dialogue</li>
+              </ul>
+            </h4>
+            <h4>
+              <ul>
+                <li>Project 2: Dialogue</li>
+              </ul>
+            </h4>
+          </div>
+
+          <div class="tb4">
+            <h4 class="tb4Mo"></h4>
+            <h4>12 — 10/12</h4>
+            <h4>
+              <ul>
+                <li>Project 2: Dialogue</li>
+              </ul>
+            </h4>
+            <h4>
+              <ul>
+                <li>Project 2: Dialogue</li>
+              </ul>
+            </h4>
+          </div>
+
+          <div class="tb4">
+            <h4 class="tb4Mo">Week7</h4>
+            <h4>13 — 10/17</h4>
+            <h4>
+              <ul>
+                <li>Project 2: Dialogue</li>
+              </ul>
+            </h4>
+            <h4>
+              <ul>
+                <li>Project 2: Dialogue</li>
+              </ul>
+            </h4>
+          </div>
+
+          <div class="tb4">
+            <h4 class="tb4Mo"></h4>
+            <h4>14 — 10/19</h4>
+            <h4>
+              <ul>
+                <li>Project 2: Dialogue</li>
+              </ul>
+            </h4>
+            <h4>
+              <ul>
+                <li>Project 2: Dialogue</li>
+              </ul>
+            </h4>
+          </div>
+
+          <div class="tb4">
+            <h4 class="tb4Mo">Week8</h4>
+            <h4>15 — 10/24</h4>
+            <h4>
+              <ul>
+                <li>Project 2: Dialogue</li>
+              </ul>
+            </h4>
+            <h4>
+              <ul>
+                <li>Project 2: Dialogue</li>
+              </ul>
+            </h4>
+          </div>
+
+          <div class="tb4">
+            <h4 class="tb4Mo"></h4>
+            <h4>16 — 10/26</h4>
+            <h4>
+              <ul>
+                <li>Project 2: Dialogue</li>
+              </ul>
+            </h4>
+            <h4>
+              <ul>
+                <li>Project 2: Dialogue</li>
+              </ul>
+            </h4>
+          </div>
+
+          <div class="tb4">
+            <h4 class="tb4Mo">Week9</h4>
+            <h4>17 — 10/31</h4>
+            <h4>
+              <ul>
+                <li>Project 2: Dialogue</li>
+              </ul>
+            </h4>
+            <h4>
+              <ul>
+                <li>Project 2: Dialogue</li>
+              </ul>
+            </h4>
+          </div>
+
+          <div class="tb4">
+            <h4 class="tb4Mo"></h4>
+            <h4>18 — 11/2</h4>
+            <h4>
+              <ul>
+                <li>Project 2: Dialogue</li>
+              </ul>
+            </h4>
+            <h4>
+              <ul>
+                <li>Project 2: Dialogue</li>
+              </ul>
+            </h4>
+          </div>
+
+          <div class="tb4">
+            <h4 class="tb4Mo">Week10</h4>
+            <h4>19 — 11/7</h4>
+            <h4>
+              <ul>
+                <li>Project 3: Narrative</li>
+              </ul>
+            </h4>
+            <h4>
+              <ul>
+                <li>Project 3: Narrative</li>
+              </ul>
+            </h4>
+          </div>
+
+          <div class="tb4">
+            <h4 class="tb4Mo"></h4>
+            <h4>20 — 11/9</h4>
+            <h4>
+              <ul>
+                <li>Project 3: Narrative</li>
+              </ul>
+            </h4>
+            <h4>
+              <ul>
+                <li>Project 3: Narrative</li>
+              </ul>
+            </h4>
+          </div>
+
+          <div class="tb4">
+            <h4 class="tb4Mo">Week11</h4>
+            <h4>21 — 11/14</h4>
+            <h4>
+              <ul>
+                <li>Project 3: Narrative</li>
+              </ul>
+            </h4>
+            <h4>
+              <ul>
+                <li>Project 3: Narrative</li>
+              </ul>
+            </h4>
+          </div>
+
+          <div class="tb4">
+            <h4 class="tb4Mo"></h4>
+            <h4>22 — 11/16</h4>
+            <h4>
+              <ul>
+                <li>Project 3: Narrative</li>
+              </ul>
+            </h4>
+            <h4>
+              <ul>
+                <li>Project 3: Narrative</li>
+              </ul>
+            </h4>
+          </div>
+
+          <div class="tb4">
+            <h4 class="tb4Mo">Week12</h4>
+            <h4>23 — 11/21</h4>
+            <h4>
+              <ul>
+                <li>Project 3: Narrative</li>
+              </ul>
+            </h4>
+            <h4>
+              <ul>
+                <li>Project 3: Narrative</li>
+              </ul>
+            </h4>
+          </div>
+
+          <div class="tb4">
+            <h4 class="tb4Mo">Week13</h4>
+            <h4>24 — 11/28</h4>
+            <h4>
+              <ul>
+                <li>Project 3: Narrative</li>
+              </ul>
+            </h4>
+            <h4>
+              <ul>
+                <li>Project 3: Narrative</li>
+              </ul>
+            </h4>
+          </div>
+
+          <div class="tb4">
+            <h4 class="tb4Mo"></h4>
+            <h4>25 — 11/30</h4>
+            <h4>
+              <ul>
+                <li>Project 3: Narrative</li>
+              </ul>
+            </h4>
+            <h4>
+              <ul>
+                <li>Project 3: Narrative</li>
+              </ul>
+            </h4>
+          </div>
+
+          <div class="tb4">
+            <h4 class="tb4Mo">Week14</h4>
+            <h4>26 — 12/5</h4>
+            <h4>
+              <ul>
+                <li>Project 3: Narrative</li>
+              </ul>
+            </h4>
+            <h4>
+              <ul>
+                <li>Project 3: Narrative</li>
+              </ul>
+            </h4>
+          </div>
+
+          <div class="tb4">
+            <h4 class="tb4Mo"></h4>
+            <h4>27 — 12/7</h4>
+            <h4>
+              <ul>
+                <li>Project 3: Narrative</li>
+              </ul>
+            </h4>
+            <h4>
+              <ul>
+                <li>Project 3: Narrative</li>
+              </ul>
+            </h4>
+          </div>
+
+          <div class="tb4">
+            <h4 class="tb4Mo">Week15</h4>
+            <h4>28 — 12/12</h4>
+            <h4>
+              <ul>
+                <li>Project 3: Narrative</li>
+              </ul>
+            </h4>
+            <h4>
+              <ul>
+                <li>Project 1,2,3,4: Submit final package</li>
+              </ul>
+            </h4>
+          </div>
+
+          <div style="height: 40px;"></div>
+        </div> -->
+        <div style="height: 20px;"></div>
+      </div>
+    </div>
+
+    <!-- Body: Are.na ================================================================== -->
+    <div class="row4">
+      <!-- <iframe class="arena-project" src="https://tud-resources.glitch.me"></iframe> -->
+      <iframe class="arena-project" src="https://bu-resource-large.glitch.me"></iframe>
+      <!-- <iframe class="arena-project" src="./row4/index.html"></iframe> -->
+    </div>
+    
+    <!-- <iframe class="row3" src="https://www.are.na/dowon-yoo/tools-upside-down/embed"></iframe> -->    
+    <!-- <iframe class="row4" src="https://www.are.na/tools-upside-down/2023-tools-upside-down/embed"></iframe> -->
+
+
+
+      <div class="container">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+        <img id="expandedImg" style="width:100%">
+        <div id="imgtext"></div>
+      </div>
+    </div>
+
+
+    <script>
+      function myFunction(imgs) {
+        var expandImg = document.getElementById("expandedImg");
+        var imgText = document.getElementById("imgtext");
+        expandImg.src = imgs.src;
+        imgText.innerHTML = imgs.alt;
+        expandImg.parentElement.style.display = "block";
+      }
+    </script>
+
+
+
+
+
+    <!-- <iframe src="http://44.201.251.223:8000/"></iframe> -->
+
+
+
+    <!-- <div style="position: fixed; top: 0; right: 0; width: 40px; height:10px; pointer-events: none; background: black; z-index: 2;"></div> -->
+    <!-- <iframe src="https://3.89.222.178" class="toolsWorld"></iframe> -->
+
+    <!-- <script>
+
+    var frame = $('#inneriframe');
+      frame.load(function () {
+          frame.contents().find('body').css('font-family', 'Arial !important');
+      }
+    </script> -->
+    
+
+    <!-- <iframe id="inneriframe" src="https://docs.google.com/document/d/10PKtvVkrLExUxQ3wohez6cf3khhciMSmxGcU7jW8hyU/preview" class="toolsWorld" allowfullscreen></iframe> -->
+    <iframe id="inneriframe" src="https://bu-note-css.glitch.me" class="toolsWorld"></iframe>
+    <!-- <iframe id="inneriframe" src="./row4/index.html" class="toolsWorld2"></iframe> -->
+    <!-- <iframe id="inneriframe" src="https://bu-note4.glitch.me" class="toolsWorld2"></iframe> -->
+    <!-- <iframe id="inneriframe" src="https://bu-resource.glitch.me" class="toolsWorld2"></iframe> -->
+    
+    <!-- <iframe id="inneriframe" src="https://bu-note2.glitch.me" class="toolsWorld2"></iframe> -->
+
+
+    <!-- <iframe id="inneriframe" src="https://chatroom-city.glitch.me" class="toolsWorld"></iframe> -->
+    <!-- <iframe id="inneriframe" src="./row4/index.html" class="toolsWorld"></iframe> -->
+    <!-- <iframe id="inneriframe" src="https://www.yourworldoftext.com/~TUD/" class="toolsWorld"></iframe> -->
+    <!-- <iframe src="http://44.201.251.223:8000/" class="toolsWorld"></iframe> -->
+
+
+    <!-- ===================================================================== -->
+    <!-- pp -->
+    <!-- ===================================================================== -->
+    <!-- Nicky Stephanie -->
+    <!-- ===================================================================== -->
+
+    <div class='pp1 font-pp'><img style="width: 15px; height: 15px;" src="./icon/emoji-bee.png">
+      <div class="ppImg">
+        <a href="https://blasianphotoarchive.cargo.site" target="_blank">
+          <img src="./img/A_Amina_1.png" title="Amina" style="width: 100%; background: #000000;">
+        </a>
+      </div>
+    </div>
+
+    <div class='pp2 font-pp'><img style="width: 15px; height: 15px;" src="./icon/emoji-bee.png">
+      <div class="ppImg">
+        <a href="https://visualizationandrealander.cargo.site" target="_blank">
+          <img src="./img/A_AndreaL_1.png" title="Andrea.L" style="width: 100%; background: #000000;">
+        </a>
+      </div>
+    </div>
+
+    <div class='pp3 font-pp'><img style="width: 15px; height: 15px;" src="./icon/emoji-bee.png">
+      <div class="ppImg">
+        <a href="https://crochet.cargo.site" target="_blank">
+          <img src="./img/A_Bonnie_1.png" title="Bonnie" style="width: 100%; background: #000000;">
+        </a>
+      </div>
+    </div>
+
+    <div class='pp4 font-pp'><img style="width: 15px; height: 15px;" src="./icon/emoji-bee.png">
+      <div class="ppImg">
+        <a href="https://detectivescomputer.cargo.site" target="_blank">
+          <img src="./img/A_Comfort_1.png" title="Comfort" style="width: 100%; background: #000000;">
+        </a>
+      </div>
+    </div>
+
+    <div class='pp5 font-pp'><img style="width: 15px; height: 15px;" src="./icon/emoji-bee.png">
+      <div class="ppImg">
+        <a href="https://pplantparenthood.cargo.site" target="_blank">
+          <img src="./img/A_Corrina_1.png" title="Corrina" style="width: 100%; background: #000000;">
+        </a>
+      </div>
+    </div>
+
+    <div class='pp6 font-pp'><img style="width: 15px; height: 15px;" src="./icon/emoji-bee.png">
+      <div class="ppImg">
+        <a href="https://horrorhues.cargo.site" target="_blank">
+          <img src="./img/A_Dar_1.png" title="Dar" style="width: 100%; background: #000000;">
+        </a>
+      </div>
+    </div>
+
+    <div class='pp7 font-pp'><img style="width: 15px; height: 15px;" src="./icon/emoji-bee.png">
+      <div class="ppImg">
+        <a href="https://thesynesthesiaarchive.cargo.site" target="_blank">
+          <img src="./img/A_Julia_1.png" title="Julia" style="width: 100%; background: #000000;">
+        </a>
+      </div>
+    </div>
+
+    <div class='pp8 font-pp'><img style="width: 15px; height: 15px;" src="./icon/emoji-bee.png">
+      <div class="ppImg">
+        <a href="https://virtualjunkdrawer.cargo.site" target="_blank">
+          <img src="./img/A_Kate_1.png" title="Kate" style="width: 100%; background: #000000;">
+        </a>
+      </div>
+    </div>
+
+    <div class='pp9 font-pp'><img style="width: 15px; height: 15px;" src="./icon/emoji-bee.png">
+      <div class="ppImg">
+        <a href="https://notdismantlingmyself.cargo.site" target="_blank">
+          <img src="./img/A_Nue_1.png" title="Nue" style="width: 100%; background: #000000;">
+        </a>
+      </div>
+    </div>
+
+    <div class='pp10 font-pp'><img style="width: 15px; height: 15px;" src="./icon/emoji-bee.png">
+      <div class="ppImg">
+        <a href="https://nintendo---001.glitch.me" target="_blank">
+          <img src="./img/A_Pink_1.png" title="Pink" style="width: 100%; background: #000000;">
+        </a>
+      </div>
+    </div>
+
+    <div class='pp11 font-pp'><img style="width: 15px; height: 15px;" src="./icon/emoji-bee.png">
+      <div class="ppImg">
+        <a href="https://therackpercussion.cargo.site" target="_blank">
+          <img src="./img/A_Riley_1.png" title="Riley" style="width: 100%; background: #000000;">
+        </a>
+      </div>
+    </div>
+
+    <div class='pp12 font-pp'><img style="width: 15px; height: 15px;" src="./icon/emoji-bee.png">
+      <div class="ppImg">
+        <a href="https://experiencingchild.cargo.site" target="_blank">
+          <img src="./img/A_Yeji_1.png" title="Yeji" style="width: 100%; background: #000000;">
+        </a>
+      </div>
+    </div>
+
+    <div class='pp13 font-pp'><img style="width: 15px; height: 15px;" src="./icon/emoji-bee.png">
+      <div class="ppImg">
+        <a href="https://understandingwesanderson.cargo.site" target="_blank">
+          <img src="./img/C_Hayley_1.png" title="Hayley" style="width: 100%; background: #000000;">
+        </a>
+      </div>
+    </div>
+
+    <div class='pp14 font-pp'><img style="width: 15px; height: 15px;" src="./icon/emoji-bee.png">
+      <div class="ppImg">
+        <a href="https://thevintagepostcard.cargo.site" target="_blank">
+          <img src="./img/C_Leila_1.png" title="Leila" style="width: 100%; background: #000000;">
+        </a>
+      </div>
+    </div>
+
+    <div class='pp15 font-pp'><img style="width: 15px; height: 15px;" src="./icon/emoji-bee.png">
+      <div class="ppImg">
+        <a href="https://sunlog.cargo.site" target="_blank">
+          <img src="./img/C_Luci_1.png" title="Luci" style="width: 100%; background: #000000;">
+        </a>
+      </div>
+    </div>
+
+    <div class='pp16 font-pp'><img style="width: 15px; height: 15px;" src="./icon/emoji-bee.png">
+      <div class="ppImg">
+        <a href="https://innocent-until-proven-guilty.glitch.me" target="_blank">
+          <img src="./img/C_Priya_1.png" title="Priya" style="width: 100%; background: #000000;">
+        </a>
+      </div>
+    </div>
+
+    <div class='pp17 font-pp'><img style="width: 15px; height: 15px;" src="./icon/emoji-bee.png">
+      <div class="ppImg">
+        <a href="https://thetealounge.cargo.site" target="_blank">
+          <img src="./img/C_ShiShi_1.png" title="Shi Shi" style="width: 100%; background: #000000;">
+        </a>
+      </div>
+    </div>
+
+    <div class='pp18 font-pp'><img style="width: 15px; height: 15px;" src="./icon/emoji-bee.png">
+      <div class="ppImg">
+        <a href="https://usersonig.cargo.site" target="_blank">
+          <img src="./img/C_Annika_1.png" title="Annika" style="width: 100%; background: #000000;">
+        </a>
+      </div>
+    </div>
+
+    <div class='pp19 font-pp'><img style="width: 15px; height: 15px;" src="./icon/emoji-bee.png">
+      <div class="ppImg">
+        <a href="https://yourdreamworld.cargo.site" target="_blank">
+          <img src="./img/C_Hailey_1.png" title="Hailey" style="width: 100%; background: #000000;">
+        </a>
+      </div>
+    </div>
+
+    <div class='pp20 font-pp'><img style="width: 15px; height: 15px;" src="./icon/emoji-bee.png">
+      <div class="ppImg">
+        <a href="https://feminineadornment.cargo.site" target="_blank">
+          <img src="./img/C_Sheryl_1.png" title="Sheryl" style="width: 100%; background: #000000;">
+        </a>
+      </div>
+    </div>
+
+    <div class='pp21 font-pp'><img style="width: 15px; height: 15px;" src="./icon/emoji-bee.png">
+      <div class="ppImg">
+        <a href="https://github.com/andreacrojasd/GLOARCH" target="_blank">
+          <img src="./img/A_AndreaR_1.png" title="Andrea" style="width: 100%; background: #000000;">
+        </a>
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
+
+    <!-- script  -->
+    <script type="text/javascript" src="index.js"></script>
+
+    <script type="text/javascript" src="pp_random.js"></script>
+
+
+  </body>
+</html>
