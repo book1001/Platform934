@@ -14,7 +14,10 @@
 
 @font-face {
   font-family: 'ABCArizona';
-  src: url('./font/ABCArizonaFlare-Regular.otf') format('opentype');
+  src: url('./font/ABCArizonaFlare-Regular.woff') format('woff');
+  src: url('./font/ABCArizonaFlare-Regular.woff2') format('woff2');
+  /* src: url('./font/ABCArizonaPlusVariable.ttf') format('ttf'); */
+  /* src: url('./font/ABCArizonaFlare-Regular.otf') format('opentype'); */
 }
 
 @font-face {
@@ -105,8 +108,9 @@ b {
 /* font: menu ================================================ */
 
 .font-menu{
-  font-family: FKGroteskMonoTrial-Regular,sans-serif;
-  font-size: 14.4px;
+  font-family: ABCArizona, serif;
+  /* font-size: 14.4px; */
+  font-size: 23.3px;
   /* font-family: FKRomanStandardTrial-Regular,serif;
   font-size: 16px; */
   letter-spacing: 0.027em;

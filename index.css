@@ -1,3 +1,8 @@
+
+* { 
+  box-sizing: border-box; 
+}
+
 /* Variable ================================================ */
 
 :root {
@@ -43,16 +48,8 @@ body {
   padding: 0;
   overflow: hidden;
   height: 100%;
-  /* background: #b0cdff;
-  background: linear-gradient(0deg, rgba(251,176,255,1) 0%, rgba(255,255,255,1) 50%, rgba(176,205,255,1) 100%); */
-  /* background: #3fd4ff;
-  background: linear-gradient(180deg, rgba(63,212,255,1) 0%, rgba(255,255,255,1) 50%, rgba(0,197,93,1) 100%); */
-  background: #00c55d;
-  background: linear-gradient(0deg, rgba(0,197,93,1) 0%, rgba(255,255,255,1) 50%, rgba(251,176,255,1) 100%);
-  /* background: #b08cff; */
-  /* background: linear-gradient(0deg, rgba(220,228,255,1) 0%, rgba(255,255,255,1) 50%, rgba(161,118,255,1) 100%); */
-
-  
+  /* background: #00c55d;
+  background: linear-gradient(0deg, rgba(0,197,93,1) 0%, rgba(255,255,255,1) 50%, rgba(251,176,255,1) 100%); */
 }
 
 
