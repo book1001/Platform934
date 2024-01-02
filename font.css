@@ -87,17 +87,38 @@
 /* text: drag color ================================================ */
 
 ::selection {
-  color: white;
-  background: black;
+  color: #ffffff;
+  text-shadow: 0 0px 6px blue;
+  background: gainsboro;
+  /* text-shadow: 0 0px 6px lightgreen;
+  background: white; */
+
+  /* color: #ffffff !important;
+  background: #000000 !important; */
+  /* color: #000000 !important;
+  background: #ffffff !important; */
 }
 
 ::-moz-selection { /* Code for Firefox */
-  color: white;
-  background: black;
+  color: #ffffff;
+  text-shadow: 0 0px 6px blue;
+  background: gainsboro;
+  /* color: #ffffff !important;
+  background: #000000 !important; */
+  /* color: #000000 !important;
+  background: #ffffff !important; */
 }
 
 
 /* default ================================================ */
+a {
+  /* color: #ffffff; */
+}
+
+a:hover {
+  color: #ffffff;
+  text-shadow: 0 0px 6px blue;
+}
 
 b {
   font-weight: normal;
@@ -110,40 +131,18 @@ b {
 .font-menu{
   font-family: ABCArizona, serif;
   /* font-size: 14.4px; */
-  font-size: 23.3px;
-  /* font-family: FKRomanStandardTrial-Regular,serif;
-  font-size: 16px; */
-  letter-spacing: 0.027em;
-  /* font-family: FKRasterRomanCompactTrial-Blended,serif;
-  font-size: 16px;
-  letter-spacing: 0.1em; */
+  font-size: 24px;
+  /* letter-spacing: 0.005em; */
+  /* letter-spacing: 0.027em; */
   text-transform: uppercase;
-  /* font-family: Century,serif;
-  font-size: 16.8px;
-  letter-spacing: 0.003em; */
-
-  /* font-family: COURIER,sans-serif;
-  font-size: 17px; */
-
-  /* font-family: NotoSerif-Regular,serif;
-  font-size: 17px; */
-
-  color: #000000;
-  /* font-family: FKGroteskSemiMonoTrial-Regular,sans-serif;
-  font-size: 14.4px; */
-  /* text-transform: uppercase;
-  letter-spacing: 0.027em; */
-
-  /* font-family: FKRomanStandardTrial-Regular,serif;
-  font-size: 18px; */
-
+  padding-right: 10px;
 }
 
 
 /* list ================================================ */
 
 ul{
-   list-style:none;
+  list-style:none;
    /* padding-left:0px; */
   margin-block-start: 0;
   margin-block-end: 0;
@@ -172,8 +171,8 @@ ul.bullet li {
 }
 
 ul.bullet li::before {
-  content: '✿';
-  /* content: '☀︎'; */
+  content: '//';
+  /* content: '✿'; */
   margin-left: -20px;
   margin-right: 8px;
   /* content: '—';
@@ -272,59 +271,35 @@ ul.bulletS li.link::before {
 
 /* font: description ================================================ */
 
-h3 {
-    /* display: block; */
-    font-family: FKGroteskMonoTrial-Regular,sans-serif;
-    font-size: 14.4px;
-    /* font-family: FKRomanStandardTrial-Regular,serif;
-    font-size: 16px; */
-    letter-spacing: 0.027em;
-    /* font-family: FKRasterRomanCompactTrial-Blended,serif;
-    font-size: 16px;
-    letter-spacing: 0.1em; */
-    text-transform: uppercase;
-    /* font-family: Century,serif;
-    font-size: 16.5px; */
-    /* font-family: COURIER,sans-serif;
-    font-size: 17px; */
-    /* font-family: NotoSerif-Regular,serif;
-    font-size: 17px; */
-    /* font-family: Century,serif;
-    font-size: 16.8px;
-    letter-spacing: 0.003em; */
+h1 {
+  font-family: ABCArizona, serif;
+  font-size: 37.7px;
+  text-transform: uppercase;
+  margin-block-start: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: normal;
+  text-align: center;
+  color: #000000;
+}
 
-    /* font-size: 1.17em; */
+h3 {
+    font-family: ABCArizona, serif;
+    font-size: 24px;
+    /* letter-spacing: 0.027em; */
+    text-transform: uppercase;
     margin-block-start: 0em;
-    /* margin-block-end: 0.3em; */
-    /* margin-block-start: 1em;
-    margin-block-end: 1em; */
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: normal;
-
     /* text-indent: 50px; */
 }
 
 h4 {
-    /* display: block; */
-    font-family: FKGroteskSemiMonoTrial-Regular,sans-serif;
-    font-size: 14.4px;
-    /* font-family: FKRomanStandardTrial-Regular,serif;
-    font-size: 16px; */
-    /* font-family: FKGroteskNeueTrial-Regular,sans-serif; */
-    /* font-family: Century,serif;
-    font-size: 16.5px; */
-    /* font-family: COURIER,sans-serif;
-    font-size: 17px; */
-    /* font-family: NotoSerif-Regular,serif;
-    font-size: 17px; */
-    /* font-family: Century,serif;
-    font-size: 16.8px; */
-    /* letter-spacing: 0.003em; */
+    font-family: ABCArizona, serif;
+    font-size: 24px;
     margin-block-start: 0.3em;
     margin-block-end: 0.3em;
-    /* margin-block-start: 1.33em;
-    margin-block-end: 1.33em; */
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: normal;

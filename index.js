@@ -34,6 +34,52 @@ function menuProjects() {
   document.getElementById("main")[0].style.display = "none";
 }
 
+// Door ------------------------------------------------
+
+$('.d-btn#door1').addClass('menu-btn-upsidedown');
+
+$(".d-btn").click(function (e) {
+    e.preventDefault();
+
+    $('[class^=door]').not($('.'+this.id)).hide();
+
+    var btns2 = $(".d-btn");
+    for(var i=0; i<btns2.length; i++) {
+      var btn2 = btns2.eq(i);
+      if(btn2[0] !== $(this)[0]) {
+        btn2.removeClass("menu-btn-upsidedown");
+        // $('.row1').addClass('show');
+      }
+    }
+
+    if($(this).hasClass("menu-btn-upsidedown")) {
+      $(this).removeClass("menu-btn-upsidedown");
+      // $('.row1').removeClass('show');
+    }
+    else {
+      $(this).addClass("menu-btn-upsidedown");
+      // $('.row1').removeClass('show');
+    }
+
+    $('.'+this.id).slideToggle(0);
+});
+
+function mainDoor() {
+  document.getElementById("main-open")[0].style.display = "none";
+}
+
+// Menu Buttons ------------------------------------------------
+
+// function menuSyllabus() {
+//   document.getElementById("notePen").style.zIndex = "10";
+//   document.getElementById("notePen").style.pointerEvents = "none";
+//   document.getElementById("notePen").style.mixBlendMode = "difference";
+//   // if (document.getElementById("row1").style.transform === "scaleY(-1)") {
+//   //   document.getElementById("row1").style.transform = "none";
+//   // } else {
+//   //   document.getElementById("row1").style.transform = "scaleY(-1)";
+//   // }
+// }
 
 // Menu Buttons ------------------------------------------------
 

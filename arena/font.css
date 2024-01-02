@@ -1,0 +1,44 @@
+/* font: import ================================================ */
+
+@font-face {
+  font-family: 'ABCArizona-Regular';
+  src: url('https://platform934.net/font/ABCArizonaFlare-Regular.woff') format('woff');
+  src: url('https://platform934.net/font/ABCArizonaFlare-Regular.woff2') format('woff2');
+}
+
+
+/* text: drag color ================================================ */
+
+::selection {
+  color: #000000 !important;
+  background: #ffffff !important;
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: #000000 !important;
+  background: #ffffff !important;
+}
+
+
+/* text: default ================================================ */
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+a:hover {
+  text-shadow: 0 0px 6px red;
+  text-decoration: none;
+}
+
+p {
+  font-family: ABCArizona-Regular, serif;
+  font-size: 23.3px;
+  margin-block-start: 0.3em;
+  margin-block-end: 0.3em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: normal;
+  text-transform: none;
+}

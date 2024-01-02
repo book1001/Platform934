@@ -1,0 +1,7 @@
+@media only screen and (max-width:600px) {
+
+  p, h3 { 
+    font-size: 15px;
+  }
+  
+}

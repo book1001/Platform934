@@ -5,13 +5,13 @@
 
 
 
-  .row1 {
+  /* .row1 {
     width: 100%;
     min-width: auto;
     min-height: auto;
     transform: translate(0, 0);
     border-left: black 0px solid;
-  }
+  } */
 
   .main-scrollContents {
     top: 58px;
@@ -23,33 +23,6 @@
 
   .main-R {
     background: transparent;
-  }
-
-  .row2 {
-    width: 100%;
-    min-width: auto;
-    min-height: auto;
-    transform: translate(0, 0);
-    border-left: black 0px solid;
-  }
-
-  .row3 {
-    width: 100%;
-    padding-right: 20px;
-    /* width: calc(100% - 20px); */
-    min-width: auto;
-    min-height: auto;
-    transform: translate(0, 0);
-    border-left: black 0px solid;
-  }
-
-  .row4 {
-    display: none;
-    width: 100%;
-    min-width: auto;
-    min-height: auto;
-    transform: translate(0, 0);
-    border-left: black 0px solid;
   }
 
   #menu-arena {
@@ -82,7 +55,7 @@
     height: calc(100% - 58px) !important;
   }
 
-  .scrollContents {
+  /* .scrollContents {
     position: fixed;
     top: 58px;
     width: 100%;
@@ -95,18 +68,30 @@
     width: calc(100% - 20px);
     height: calc(100% - 58px);
     padding: 0;
+  } */
+
+  .font-menu {
+    font-size: 15px;
+    padding-right: 4px;
   }
 
+  h1 {
+    font-size: 30px;
+  }
+
+  h3, h4 { 
+    font-size: 15px;
+  }
 }
 
 @media only screen and (max-width:900px) {
   
-  .menu-top-right {
+  /* .menu-top-right {
     position: fixed;
-    top: 48px;
+    top: 38px;
     left: 20px;
     right: auto;
-  }
+  } */
 
 }
 
@@ -171,11 +156,19 @@
 
 @media only screen and (max-width:600px) {   /* For tablets: */
 
+  .menu-top-left {
+    left: 0;
+    padding: 0 28px 0 28px;
+  }
+
   .menu-top-right {
-    position: fixed;
-    top: 48px;
-    left: 20px;
-    right: auto;
+    top: 38px;
+    left: 0;
+    padding: 0 28px 0 28px;
+  }
+
+  .menu-top-right-right {
+    right: 18px;
   }
 
   .row1 {
@@ -199,23 +192,9 @@
   .main-R {
     display: none;
   }
-  
-  .row2 {
-    min-width: auto;
-    min-height: auto;
-    transform: translate(0, 0);
-  }
 
-  .row3 {
-    min-width: auto;
-    min-height: auto;
-    transform: translate(0, 0);
-  }
-
-  .row4 {
-    min-width: auto;
-    min-height: auto;
-    transform: translate(0, 0);
+  .row6 {
+    padding-left: 28px;
   }
 
   .arena-project {
@@ -227,14 +206,14 @@
   }
 
   .scrollContents {
-    top: 88px;
-    height: calc(100% - 88px);
+    top: 0;
+    height: 100svh;
     padding: 0;
   }
   
   .scrollContents-margin {
-    top: 88px;
-    height: calc(100% - 88px);
+    top: 0;
+    height: 100svh;
     padding: 0 20px 0 0;
   }
 
@@ -252,23 +231,36 @@
   } */
 
   .col2 {
-      grid-template-columns: 1fr;
-      padding-right: 20px;
+    padding: 0 28px 0 28px;
+    grid-template-columns: 1fr;
+    row-gap: 0px;
+  }
+  
+  .col-arena-L {
+    width: 100%;
+    padding: 0 28px 0 28px;
   }
 
-  .ppDetail {
-    top: 60px;
-    padding-top: auto;
-    left: 0;
+  .col-arena-R {
     width: 100%;
-    min-width: auto;
-    min-height: auto;
-    margin: 0 20px 0 20px;
-    transform: translate(0, 0);
+    padding: 0 28px 0 28px;
+  }
+
+  .col3-arena-1,
+  .col3-arena-2,
+  .col3-arena-3 {
+    width: 100%;
+    padding: 0 28px 0 28px;
+  }
+
+  .tbW, .tbWR3, .tbWR4 {
+    grid-template-columns: 1fr;
+    border-bottom: 1px solid #000000;
   }
 
   .tb3-1 {
     grid-template-columns: 45px 1fr 1fr;
+    border-bottom: 1px dotted #000000;
   }
 
   .tb3-2 {
@@ -281,8 +273,8 @@
     column-gap: 10px;
     row-gap: 10px;
     border-bottom: 1px solid #000000;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); */
   }
 
   .tb4Mo {
@@ -290,10 +282,6 @@
     /* color: transparent;
     grid-column:0;
     grid-row: 0; */
-  }
-  
-  .tbW {
-    grid-template-columns: 1fr;
   }
 
 }
