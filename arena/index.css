@@ -58,9 +58,12 @@ hr {
 /* top area =============================================== */
 
 .h-arena-top {
-  height: 260px;
+  height: 230px;
 }
 
+.h-arena-top-3 {
+  height: 230px;
+}
 
 /* Channel ================================================ */
 
@@ -86,7 +89,7 @@ hr {
   display: grid;
   margin: 0;
   padding-bottom: 20px;
-  grid-template-columns: 1fr 1fr; 
+  grid-template-columns: 1fr 1fr 1fr; 
   font-size: 0;
   gap: 20px;
 }
@@ -137,6 +140,7 @@ hr {
   font-weight: normal;
   border: 10px solid #000;
   background: #000000;
+  filter:invert(1);
 }
 
 .BlockInner__Text {
@@ -203,36 +207,4 @@ img {
 
 video {
   width: 100%;
-}
-
-
-
-/* Media ================================================ */
-
-@media only screen and (max-width:600px) {   /* For tablets: */
-  
-  .ChannelContents {
-    grid-template-columns: 1fr; 
-    font-size: 0;
-  }
-
-  .ChannelContents-3 {
-    grid-template-columns: 1fr 1fr; 
-    font-size: 0;
-  }
-
-  /* .p1_magic-spells_1 {
-    grid-template-columns: 1fr; 
-    font-size: 0;
-  }
-
-  .p1_magic-spells_2 {
-    grid-template-columns: 1fr; 
-    font-size: 0;
-  } */
-  
-  /* .Text {
-    grid-column: 1 / span 3; 
-  } */
-  
 }

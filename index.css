@@ -64,9 +64,9 @@ button {
 /* Divider =============================================== */
 
 hr {
-    background: #000000;
+    background: #ffffff;
     border: 0;
-    height: 2.3px;
+    height: 2px;
     display: block;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -185,8 +185,10 @@ img.right {
 }
 
 .menu-index:hover {
-  transform: scaleY(-1);
-  -webkit-transform: scaleY(-1);
+  color: #000000;
+  text-shadow: 0 0px 6px yellow;;
+  /* transform: scaleY(-1);
+  -webkit-transform: scaleY(-1); */
 }
 
 
@@ -207,6 +209,10 @@ img.right {
     /* text-shadow: 0 0px 6px cyan; */
     /* transform: scaleY(-1);
     -webkit-transform: scaleY(-1); */
+  }
+  .blank:hover {
+    color: #000000;
+    text-shadow: 0 0px 6px cyan;
   }
 }
 
@@ -357,8 +363,8 @@ iframe{
   -webkit-backdrop-filter: blur(10px); */
   overflow: hidden;
   border-left: black 1px solid;
-  /* mix-blend-mode: difference;
-  color: #ffffff; */
+  mix-blend-mode: difference;
+  color: #ffffff;
 }
 
 #main {
@@ -401,6 +407,8 @@ iframe{
   top: 0;
   left: 0;
   z-index: 7;
+  mix-blend-mode: difference;
+  color: #ffffff;
 }
 
 .row3 {
@@ -409,6 +417,8 @@ iframe{
   top: 0;
   left: 0;
   z-index: 7;
+  mix-blend-mode: difference;
+  color: #ffffff;
 }
 
 .row4 {
@@ -417,6 +427,8 @@ iframe{
   top: 0;
   left: 0;
   z-index: 7;
+  mix-blend-mode: difference;
+  color: #ffffff;
 }
 
 
@@ -435,8 +447,8 @@ iframe{
   /* backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px); */
   /* border-left: black 1px solid; */
-  /* mix-blend-mode: difference;
-  color: #ffffff; */
+  mix-blend-mode: difference;
+  color: #ffffff;
 }
 
 .row6 {
@@ -455,8 +467,8 @@ iframe{
   /* backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-left: black 1px solid; */
-  /* mix-blend-mode: difference;
-  color: #ffffff; */
+  mix-blend-mode: difference;
+  color: #ffffff;
 }
 
 .row-project {
@@ -506,7 +518,28 @@ iframe{
   -webkit-backdrop-filter: blur(10px); */
   overflow: hidden;
   border-left: black 1px solid;
+  mix-blend-mode: difference;
+  color: #ffffff;
 }
+
+.row8 {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* transform: translate(100%, 0); */
+  width: 100%;
+  /* width: 50%; */
+  height: 100%;
+  min-width: 500px;
+  min-height: 500px;
+  z-index: 7;
+  /* backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); */
+  overflow: hidden;
+  border-left: black 1px solid;
+}
+
 
 .arena-project {
   position: absolute;
@@ -564,7 +597,7 @@ iframe{
   grid-template-columns: 130px 1fr;
   grid-template-rows: auto auto;
   gap: 0px;
-  border-bottom: 2.3px solid #000000;
+  border-bottom: 2px solid #ffffff;
 }
 
 .tbWR3 {
@@ -572,7 +605,7 @@ iframe{
   grid-template-columns: 130px 1fr;
   grid-template-rows: auto auto auto;
   gap: 0px;
-  border-bottom: 2.3px solid #000000;
+  border-bottom: 2px solid #ffffff;
 }
 
 .tbWR4 {
@@ -580,7 +613,7 @@ iframe{
   grid-template-columns: 130px 1fr;
   grid-template-rows: auto auto auto auto;
   gap: 0px;
-  border-bottom: 2.3px solid #000000;
+  border-bottom: 2px solid #ffffff;
 }
 
 .tb3-1 {
@@ -588,7 +621,7 @@ iframe{
   grid-template-columns: 130px 1fr 1fr;
   column-gap: 10px;
   row-gap: 10px;
-  border-bottom: 2.3px dotted #000000;
+  border-bottom: 2px dotted #ffffff;
 }
 
 .tb3-2 {
@@ -603,7 +636,7 @@ iframe{
   grid-template-columns: 130px 130px 1fr 1fr;
   column-gap: 10px;
   row-gap: 10px;
-  border-bottom: 2.3px solid #000000;
+  border-bottom: 2px solid #ffffff;
 }
 
 .tb4Mo {

@@ -28,7 +28,8 @@ a {
 }
 
 a:hover {
-  text-shadow: 0 0px 6px red;
+  color: #000000;
+  text-shadow: 0 0px 6px yellow;
   text-decoration: none;
 }
 
@@ -41,4 +42,17 @@ p {
   margin-inline-end: 0px;
   font-weight: normal;
   text-transform: none;
+  color: #ffffff;
+}
+
+P::selection {
+  color: #000000;
+  text-shadow: 0 0px 6px blue;
+  background: #2d2d2d;
+}
+
+p:hover {
+  color: #000000;
+  text-shadow: 0 0px 6px yellow;
+  text-decoration: none;
 }

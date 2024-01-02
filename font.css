@@ -87,9 +87,13 @@
 /* text: drag color ================================================ */
 
 ::selection {
-  color: #ffffff;
+  color: #000000;
+  text-shadow: 0 0px 6px yellow;
+  background: #2d2d2d;
+  /* color: #ffffff;
   text-shadow: 0 0px 6px blue;
-  background: gainsboro;
+  background: gainsboro; */
+
   /* text-shadow: 0 0px 6px lightgreen;
   background: white; */
 
@@ -100,9 +104,14 @@
 }
 
 ::-moz-selection { /* Code for Firefox */
-  color: #ffffff;
+  color: #000000;
+  text-shadow: 0 0px 6px yellow;
+  background: #2d2d2d;
+
+  /* color: #ffffff;
   text-shadow: 0 0px 6px blue;
-  background: gainsboro;
+  background: gainsboro; */
+
   /* color: #ffffff !important;
   background: #000000 !important; */
   /* color: #000000 !important;
@@ -112,12 +121,12 @@
 
 /* default ================================================ */
 a {
-  /* color: #ffffff; */
+  color: #ffffff;
 }
 
 a:hover {
-  color: #ffffff;
-  text-shadow: 0 0px 6px blue;
+  color: #000000;
+  text-shadow: 0 0px 6px yellow;
 }
 
 b {
@@ -275,9 +284,10 @@ h1 {
   font-family: ABCArizona, serif;
   font-size: 37.7px;
   text-transform: uppercase;
-  margin-block-start: 0em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
+  margin-block-start: 0;
+  margin-block-end: 50px;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
   font-weight: normal;
   text-align: center;
   color: #000000;

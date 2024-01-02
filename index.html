@@ -35,7 +35,7 @@
   </head>
 
   <body>
-    <div style="position: fixed; top:0; width: 100%; z-index: 10;">
+    <div style="position: fixed; top:0; width: 100%; z-index: 10; pointer-events: none;">
       <div style="position: absolute; left:0;">
         <h3>
           †<br><br>†<br><br>†<br><br>†<br><br>†<br><br>†<br><br>†<br><br>†<br><br>†<br><br>†<br><br>†<br><br>†<br><br>†<br><br>†<br><br>†<br><br>†<br><br>
@@ -83,13 +83,16 @@
       <button id="row7" class="menu-btn font-menu" onclick="menuArena()" type="button">
         Note
       </button>
-      <button class="menu-btn font-menu" onclick="javascript:window.open('https://docs.google.com/document/d/1toKIMsfGcYUYXohZGOpnBLNVuVZfpCLny5dz9ly-bSY/edit?usp=sharing', '_blank');" type="button">
+      <!-- <button id="row8" class="menu-btn font-menu" onclick="menuArena()" type="button">
+        Sign-up
+      </button> -->
+      <button class="menu-btn blank font-menu" onclick="javascript:window.open('https://docs.google.com/document/d/1toKIMsfGcYUYXohZGOpnBLNVuVZfpCLny5dz9ly-bSY/edit?usp=sharing', '_blank');" type="button">
         Sign-up
       </button>
-      <button class="menu-btn font-menu" onclick="javascript:window.open('https://drive.google.com/drive/folders/16eGiQWQRIm86FgiWRTDg19b-6z3mNlvH?usp=sharing', '_blank');" type="button">
+      <button class="menu-btn blank font-menu" onclick="javascript:window.open('https://drive.google.com/drive/folders/16eGiQWQRIm86FgiWRTDg19b-6z3mNlvH?usp=sharing', '_blank');" type="button">
         G-Drive
       </button>
-      <button class="menu-btn font-menu" onclick="javascript:window.open('https://www.are.na/platform-9-ctc-1000-103/platform-9-collaborative-archive', '_blank');" type="button">
+      <button class="menu-btn blank font-menu" onclick="javascript:window.open('https://www.are.na/platform-9-ctc-1000-103/platform-9-collaborative-archive', '_blank');" type="button">
         Are.na
       </button>
     </div>
@@ -236,8 +239,8 @@
           <!-- --------------------------------------------------------------- -->
         </div>
 
-        <div class="p-title-bg">
-        </div>
+        <!-- <div class="p-title-bg">
+        </div> -->
   
         <div class="p-title">
           <h1 style="color: white;">Magic Spells</h1>
@@ -267,7 +270,6 @@
               </button>
             </div>
           </div>
-
         </div>
         
       </div>
@@ -412,21 +414,51 @@
     <div class="row2">
       <div class="scrollContents">
 
-        <div class="h-top"></div>
-        <h1>Infinite Figures</h1>
+        <!-- <div class="h-top"></div>
+        <h1>Infinite Figures</h1> -->
         
         <div class="col2" style="text-indent: 0px;">
           <!-- --------------------------------------------------------------- -->
-          <div>
+          <div id="p2_infiniteFigures_1">
             <iframe class="col-arena-L" src="arena/p2_infinite-figures_1.html"></iframe>
           </div>
           <!-- --------------------------------------------------------------- -->
-          <div>
+          <div id="p2_infiniteFigures_2">
             <iframe class="col-arena-R" src="arena/p2_infinite-figures_2.html"></iframe>
           </div>
           <!-- --------------------------------------------------------------- -->
         </div>
         
+        <div class="p-title">
+          <h1 style="color: white;">Infinite Figures</h1>
+
+          <div class="p-title-sub">
+            <div class="p-title-sub-L">
+              <a href="https://www.are.na/platform-9-ctc-1000-103/infinite-figures-1" target="_blank">
+                <h3 class="p-title-sub-link">1.11 Thu // Infinite Figures 1</h3>
+              </a>
+            </div>
+            <div class="p-title-sub-R">
+              <a href="https://www.are.na/platform-9-ctc-1000-103/infinite-figures-2" target="_blank">
+                <h3 class="p-title-sub-link">1.12 Fri // Infinite Figures 2</h3>
+              </a>
+            </div>
+          </div>
+
+          <div class="p-title-subM">
+            <div style="text-align: center;">
+              <button id="btn_p2_1" class="p-title-subM-btn font-menu" onclick="p2_infiniteFigures_1()" type="button">
+                1.11 Thu // Infinite Figures 1
+              </button>
+            </div>
+            <div style="text-align: center;">
+              <button id="btn_p2_2" class="p-title-subM-btn font-menu" onclick="p2_infiniteFigures_2()" type="button">
+                1.12 Fri // Infinite Figures 2
+              </button>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -443,17 +475,17 @@
         
         <div class="col2" style="text-indent: 0px;">
           <!-- --------------------------------------------------------------- -->
-          <div>
+          <div id="p3_ghosts_1">
             <!-- <iframe class="col3-arena-1" src="arena/p1_magic-spells_1.html"></iframe> -->
             <iframe class="col3-arena-1" src="arena/p3_ghosts_1.html"></iframe>
           </div>
           <!-- --------------------------------------------------------------- -->
-          <div>
+          <div id="p3_ghosts_2">
             <!-- <iframe class="col3-arena-2" src="arena/p1_magic-spells_1.html"></iframe> -->
             <iframe class="col3-arena-2" src="arena/p3_ghosts_2.html"></iframe>
           </div>
           <!-- --------------------------------------------------------------- -->
-          <div>
+          <div id="p3_ghosts_3">
             <iframe class="col3-arena-3" src="https://platform934-note.glitch.me"></iframe>
           </div>
           <!-- --------------------------------------------------------------- -->
@@ -463,15 +495,48 @@
           <h1 style="color: white;">Ghosts in the Net</h1>
         <h3 style="text-align: center;">1:1 Meetings Zoom Link</h3>
         </div> -->
+
+        <div class="p-title">
+          <h1 style="color: white;">Ghosts in the Net</h1>
+          <!-- <h3 style="color: white; text-align: center;">1:1 Meetings Zoom Link</h3> -->
   
-      </div>
+          <div class="p-title-sub">
+            <div class="p-title-sub-1">
+              <a href="https://www.are.na/platform-9-ctc-1000-103/ghosts-in-the-net-1" target="_blank">
+                <h3 class="p-title-sub-link">1.17 Wed // Ghosts in the Net 1</h3>
+              </a>
+            </div>
+            <div class="p-title-sub-2">
+              <a href="https://www.are.na/platform-9-ctc-1000-103/ghosts-in-the-net-2" target="_blank">
+                <h3 class="p-title-sub-link">1.19 Fri // Ghosts in the Net 2</h3>
+              </a>
+            </div>
+            <div class="p-title-sub-3">
+              <a href="https://www.are.na/platform-9-ctc-1000-103/ghosts-in-the-net-2" target="_blank">
+                <h3 class="p-title-sub-link">Zoom Meeting</h3>
+              </a>
+            </div>
+          </div>
+  
+          <div class="p-title-subM">
+            <div style="text-align: center;">
+              <button id="btn_p3_1" class="p-title-subM-btn font-menu" onclick="p3_ghosts_1()" type="button">
+                1.17 Wed // Ghosts in the Net 1
+              </button>
+            </div>
+            <div style="text-align: center;">
+              <button id="btn_p3_2" class="p-title-subM-btn font-menu" onclick="p3_ghosts_2()" type="button">
+                1.19 Fri // Ghosts in the Net 2
+              </button>
+            </div>
+            <div style="text-align: center;">
+              <button id="btn_p3_3" class="p-title-subM-btn font-menu" onclick="p3_ghosts_3()" type="button">
+                1:1 Zoom Meetings
+              </button>
+            </div>
+          </div>
+        </div>
 
-      <div class="p-title-bg">
-      </div>
-
-      <div class="p-title">
-        <h1 style="color: white;">Ghosts in the Net</h1>
-        <h3 style="color: white; text-align: center;">1:1 Meetings Zoom Link</h3>
       </div>
     </div>
 
@@ -484,14 +549,59 @@
         
         <div class="col2" style="text-indent: 0px;">
           <!-- --------------------------------------------------------------- -->
-          <div>
-            <iframe class="col-arena-L" src="arena/p4_platform_1.html"></iframe>
+          <div id="p4_platform_1">
+            <iframe class="col3-arena-1" src="arena/p4_platform_1.html"></iframe>
           </div>
           <!-- --------------------------------------------------------------- -->
-          <div>
-            <iframe class="col-arena-R" src="arena/p4_platform_2.html"></iframe>
+          <div id="p4_platform_2">
+            <iframe class="col3-arena-2" src="arena/p4_platform_2.html"></iframe>
           </div>
           <!-- --------------------------------------------------------------- -->
+          <div id="p4_platform_3">
+            <iframe class="col3-arena-3" src="https://platform934-note.glitch.me"></iframe>
+          </div>
+          <!-- --------------------------------------------------------------- -->
+        </div>
+
+        <div class="p-title">
+          <h1 style="color: white;">Platform 9 ¾</h1>
+          <!-- <h3 style="color: white; text-align: center;">1:1 Meetings Zoom Link</h3> -->
+  
+          <div class="p-title-sub">
+            <div class="p-title-sub-1">
+              <a href="https://www.are.na/platform-9-ctc-1000-103/platform-9-1-fex2ejgnq9q" target="_blank">
+                <h3 class="p-title-sub-link">1.24 Wed // Platform 9 ¾ 1</h3>
+              </a>
+            </div>
+            <div class="p-title-sub-2">
+              <a href="https://www.are.na/platform-9-ctc-1000-103/platform-9-2-qk00v1cd4jm" target="_blank">
+                <h3 class="p-title-sub-link">1.26 Fri // Platform 9 ¾ 2</h3>
+              </a>
+            </div>
+            <div class="p-title-sub-3">
+              <a href="https://www.are.na/platform-9-ctc-1000-103/ghosts-in-the-net-2" target="_blank">
+                <h3 class="p-title-sub-link">Zoom Meeting</h3>
+              </a>
+            </div>
+          </div>
+  
+          <div class="p-title-subM">
+            <div style="text-align: center;">
+              <button id="btn_p4_1" class="p-title-subM-btn font-menu" onclick="p4_platform_1()" type="button">
+                1.24 Wed // Platform 9 ¾ 1
+              </button>
+            </div>
+            <div style="text-align: center;">
+              <button id="btn_p4_2" class="p-title-subM-btn font-menu" onclick="p4_platform_2()" type="button">
+                1.26 Fri // Platform 9 ¾ 2
+              </button>
+            </div>
+            <div style="text-align: center;">
+              <button id="btn_p4_3" class="p-title-subM-btn font-menu" onclick="p4_platform_3()" type="button">
+                1:1 Zoom Meetings
+              </button>
+            </div>
+          </div>
         </div>
         
       </div>
@@ -1123,34 +1233,17 @@
     <!-- Body: Are.na ================================================================== -->
     <div class="row7">
       <div class="scrollContents">
-        <!-- <div class="p-title">
-          <button id="playText" style="padding-right:5px;" onclick="playText()" type="button">
-            ➊
-          </button>
-          <button id="playPen" style="padding-right:5px;" onclick="playPen()" type="button">
-            ➊22
-          </button>
-        </div> -->
-        
-        
-        <div class="col2" style="text-indent: 0px;">
-          <!-- --------------------------------------------------------------- -->
-      
-          <iframe id="noteText" class="col-arena-L" src="https://platform934-note.glitch.me"></iframe>
-       
-          <!-- --------------------------------------------------------------- -->
-          <!-- <div id="notePen">
-            <script type="text/javascript" src="canvas.js"></script>
-          </div> -->
-          
-
-          <!-- <iframe id="notePen" class="col-arena-L" src="/note/index.html"></iframe> -->
-         
-          <!-- --------------------------------------------------------------- -->
-        </div>
-
+        <iframe id="noteText" class="iframe-full" src="https://platform934-note.glitch.me"></iframe>
       </div>
     </div>
+
+    <!-- Body: Are.na ================================================================== -->
+    <!-- <div class="row8">
+      <div class="scrollContents">
+        <iframe id="noteText" class="iframe-doc" src="https://docs.google.com/document/d/1toKIMsfGcYUYXohZGOpnBLNVuVZfpCLny5dz9ly-bSY/edit?usp=sharing"></iframe>
+      </div>
+    </div> -->
+
 
     <iframe id="notePen" class="toolsWorld" src="/note/index.html"></iframe>
     <!-- <iframe id="notePen" class="col-arena-L" src="https://platform-drawing2.glitch.me"></iframe> -->
