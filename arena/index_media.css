@@ -1,4 +1,7 @@
 @media only screen and (max-width:600px) {
+  .h-arena-top {
+    height: 210px;
+  }
 
   p, h3 { 
     font-size: 15px;
