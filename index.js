@@ -133,8 +133,8 @@ function p3_ghosts_2() {
 
 function p3_ghosts_3() {
   document.getElementById("p3_ghosts_1").style.display = "none";
-  document.getElementById("p3_ghosts_2").style.display = "block";
-  document.getElementById("p3_ghosts_3").style.display = "none";
+  document.getElementById("p3_ghosts_2").style.display = "none";
+  document.getElementById("p3_ghosts_3").style.display = "block";
   document.getElementById("btn_p3_1").style.color = "#ffffff";
   document.getElementById("btn_p3_1").style.textShadow = "none";
   document.getElementById("btn_p3_2").style.color = "#ffffff";
@@ -169,8 +169,8 @@ function p4_platform_2() {
 
 function p4_platform_3() {
   document.getElementById("p4_platform_1").style.display = "none";
-  document.getElementById("p4_platform_2").style.display = "block";
-  document.getElementById("p4_platform_3").style.display = "none";
+  document.getElementById("p4_platform_2").style.display = "none";
+  document.getElementById("p4_platform_3").style.display = "block";
   document.getElementById("btn_p4_1").style.color = "#ffffff";
   document.getElementById("btn_p4_1").style.textShadow = "none";
   document.getElementById("btn_p4_2").style.color = "#ffffff";

@@ -220,6 +220,10 @@
     padding: 0 20px 0 0;
   }
 
+  .iframe-full {
+    padding: 0 28px 0 28px;
+  }
+
 
   /* .row3 {
     top: 88px;
@@ -249,9 +253,23 @@
     padding: 0 28px 0 28px;
   }
 
-  .col3-arena-1,
-  .col3-arena-2,
+  .col3-arena-1 {
+    left: 0;
+    transform: translate(0, 0);
+    width: 100%;
+    padding: 0 28px 0 28px;
+  }
+
+  .col3-arena-2 {
+    left: 0;
+    transform: translate(0, 0);
+    width: 100%;
+    padding: 0 28px 0 28px;
+  }
+
   .col3-arena-3 {
+    left: 0;
+    transform: translate(0, 0);
     width: 100%;
     padding: 0 28px 0 28px;
   }
