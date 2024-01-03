@@ -83,7 +83,8 @@ function renderChannel(slug, page) {
                     case "Text":
                       return `
                       <div class="BlockInner__Link" style="color: #ffffff;">
-                        ${block.content_html}
+                        <img class="BlockInner__Image" src="../img/arenabg1.png">
+                        <div class="BlockInner__Text">${block.content_html}</div>
                       </div>
                       <a href="https://www.are.na/block/${block.id}">
                         <p style="text-align: center; text-transform: uppercase;">

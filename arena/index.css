@@ -131,27 +131,66 @@ hr {
 
 .BlockInner__Link {
   display: block;
-  font-family: FKGroteskSemiMonoTrial-Regular,sans-serif;
-  font-size: 14.4px;
-  margin-block-start: 0em;
-  margin-block-end: 0em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
+  font-size: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
   font-weight: normal;
   border: 10px solid #000;
   background: #000000;
   filter:invert(1);
+  overflow-y: auto;
 }
 
 .BlockInner__Text {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  /* transform: translate(0, -50%);
+  top: 100%; */
+  transform: translate(0, -50%);
+  top: 50%;
+  text-align: center;
+  /* mix-blend-mode: difference; */
+  color: #000000;
+  text-shadow: 0 0px 6px blue;
+  /* position: relative;
+  top: 40%;
+  transform: translate(0, -50%);
+  display: block;
+  font-size: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  font-weight: normal;
+  border: 10px solid #000;
   background: #000000;
+  filter:invert(1);
+  text-align: center;
+  overflow: hidden;
+  font-size: 15px; */
 }
 
-.BlockInner__Text p {
+
+
+/* .BlockInner__Text {  
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 100%;
+  max-height: 200px;
+  text-align: center;
+  overflow:hidden;
+} */
+
+
+/* .BlockInner__Text p {
   width: 100%;
   max-width: 600px;
   font-size: 11px;
-}
+} */
 
 .BlockInner__Channel {
   display: block;

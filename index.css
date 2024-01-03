@@ -186,7 +186,7 @@ img.right {
 
 .menu-index:hover {
   color: #000000;
-  text-shadow: 0 0px 6px yellow;;
+  text-shadow: 0 0px 6px cyan;;
   /* transform: scaleY(-1);
   -webkit-transform: scaleY(-1); */
 }
@@ -212,7 +212,7 @@ img.right {
   }
   .blank:hover {
     color: #000000;
-    text-shadow: 0 0px 6px cyan;
+    text-shadow: 0 0px 6px yellow;
   }
 }
 
