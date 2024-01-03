@@ -300,12 +300,12 @@
 
   .tbW, .tbWR3, .tbWR4 {
     grid-template-columns: 1fr;
-    border-bottom: 1px solid #000000;
+    border-bottom: 1px solid #ffffff;
   }
 
   .tb3-1 {
     grid-template-columns: 45px 1fr 1fr;
-    border-bottom: 1px dotted #000000;
+    border-bottom: 1px dotted #ffffff;
   }
 
   .tb3-2 {
@@ -317,7 +317,7 @@
     grid-template-columns: 45px 1fr 1fr;
     column-gap: 10px;
     row-gap: 10px;
-    border-bottom: 1px solid #000000;
+    border-bottom: 1px solid #ffffff;
     /* backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px); */
   }
