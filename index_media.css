@@ -150,6 +150,17 @@
 
 /* Tablet =============================================== */
 
+@media only screen and (max-width:1077px) { /* For tablets: */
+
+  .col2 {
+    padding: 0 28px 0 28px;
+    grid-template-columns: 1fr;
+    row-gap: 0px;
+  }
+  
+
+}
+
 @media only screen and (max-width:800px) { /* For tablets: */
 
 
@@ -243,6 +254,19 @@
     row-gap: 0px;
   }
   
+  .col2-S1 {
+    grid-template-columns: 1fr;
+  }
+
+  .col2-S2 {
+    grid-template-columns: 75px auto;
+  }
+  
+  .col2-S3 {
+    grid-template-columns: 75px 70px 70px auto;
+  }
+  
+
   .col-arena-L {
     width: 100%;
     padding: 0 28px 0 28px;

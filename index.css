@@ -589,6 +589,20 @@ iframe{
   padding-left: 20px; */
 }
 
+.col2-S1 {
+	display: grid;
+  grid-template-columns: 180px auto;
+}
+
+.col2-S2 {
+	display: grid;
+  grid-template-columns: 130px auto;
+}
+
+.col2-S3 {
+	display: grid;
+  grid-template-columns: 130px 120px 110px auto;
+}
 
 /* Schedule ================================================ */
 
