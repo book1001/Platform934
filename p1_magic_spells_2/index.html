@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ㅤ</title>
+    <!-- <link rel="shortcut icon" href="favicon.ico"> -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style_maps_streetview.css">
+    <!-- <link rel="stylesheet" href="style_scrolling.css">
+    <link rel="stylesheet" href="style_cloud.css">
+    <link rel="stylesheet" href="style_cloud_sprite.css">
+    <link rel="stylesheet" href="style_modal.css"> -->
+    <link rel="stylesheet" href="https://use.typekit.net/ewy8kjf.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <script type="module" src="script_maps_streetview,location.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYT0xiOxC3EscSZXaqt3qpFfZoJ7I918A&callback=initialize&libraries=places" defer></script>
+
+    <!-- screencapture -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+
+  </head>
+
+  <body>
+    <style>
+      .square {
+        z-index: 9;
+        position: fixed; /* Stay in place */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: hidden; /* Enable scroll if needed */
+        pointer-events: none;
+        /* cursor:none; */
+        animation: fadeIn linear 7s;
+        -webkit-animation: fadeIn linear 7s;
+        -moz-animation: fadeIn linear 7s;
+        -o-animation: fadeIn linear 7s;
+        -ms-animation: fadeIn linear 7s;
+        }
+
+        @keyframes fadeIn {
+        0% {background-color: rgb(0,0,0); opacity:1;}
+        100% {opacity:0;}
+        }
+
+        @-moz-keyframes fadeIn {
+        0% {opacity:1;}
+        100% {opacity:0;}
+        }
+
+        @-webkit-keyframes fadeIn {
+        0% {opacity:1;}
+        100% {opacity:0;}
+        }
+
+        @-o-keyframes fadeIn {
+        0% {opacity:1;}
+        100% {opacity:0;}
+        }
+
+        @-ms-keyframes fadeIn {
+        0% {opacity:1;}
+        100% {opacity:0;}
+        }
+    </style>
+
+    <!-- <input type="button" value="캡쳐" style="z-index: 8; position: fixed; top:0px; left:0px;">
+    <button type="button" class="btn_download" style="z-index: 8;">이미지 저장하기</button> -->
+    <style>
+      .pressed {
+        display: block  !important;
+        transition: all .5s ease;
+        /* opacity: 1; */
+      }
+
+      /*
+      body {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-content: center;
+      grid-gap: 1rem;
+      padding: 1rem;
+      height: 100vh;
+      background: skyblue;
+      } */
+    </style>
+
+    <script>
+//     vat input = document.getEl~~();
+// input.focus();
+
+    window.addEventListener("keydown", e => {
+      const key = document.getElementById("address");
+      // if (key) key.classList.add('pressed');
+      // else if (e.keyCode == '38') key.classList.none('pressed');
+      // else if (e.keyCode == '40') key.classList.none('pressed');
+      // else if (e.keyCode == '37') key.classList.none('pressed');
+      // else if (e.keyCode == '39') key.classList.none('pressed');
+
+      // const allowkey = [];
+      // const allowkey.push('38');
+      // const allowkey.push('40');
+      // const allowkey.push('37');
+      // const allowkey.push('39');
+      // const allowkey = ['192', '49', '50'];
+      // if (e.keyCode == allowkey.includes('192')) key.focus();
+      if (e.keyCode == '192') key.classList.add('pressed');
+      if (e.keyCode == '49') key.classList.add('pressed');
+      if (e.keyCode == '50') key.classList.add('pressed');
+      if (e.keyCode == '51') key.classList.add('pressed');
+      if (e.keyCode == '52') key.classList.add('pressed');
+      if (e.keyCode == '53') key.classList.add('pressed');
+      if (e.keyCode == '54') key.classList.add('pressed');
+      if (e.keyCode == '55') key.classList.add('pressed');
+      if (e.keyCode == '56') key.classList.add('pressed');
+      if (e.keyCode == '57') key.classList.add('pressed');
+      if (e.keyCode == '48') key.classList.add('pressed');
+      if (e.keyCode == '81') key.classList.add('pressed');
+      if (e.keyCode == '87') key.classList.add('pressed');
+      if (e.keyCode == '69') key.classList.add('pressed');
+      if (e.keyCode == '82') key.classList.add('pressed');
+      if (e.keyCode == '84') key.classList.add('pressed');
+      if (e.keyCode == '89') key.classList.add('pressed');
+      if (e.keyCode == '85') key.classList.add('pressed');
+      if (e.keyCode == '73') key.classList.add('pressed');
+      if (e.keyCode == '79') key.classList.add('pressed');
+      if (e.keyCode == '80') key.classList.add('pressed');
+      if (e.keyCode == '219') key.classList.add('pressed');
+      if (e.keyCode == '221') key.classList.add('pressed');
+      if (e.keyCode == '220') key.classList.add('pressed');
+      if (e.keyCode == '65') key.classList.add('pressed');
+      if (e.keyCode == '83') key.classList.add('pressed');
+      if (e.keyCode == '68') key.classList.add('pressed');
+      if (e.keyCode == '70') key.classList.add('pressed');
+      if (e.keyCode == '71') key.classList.add('pressed');
+      if (e.keyCode == '72') key.classList.add('pressed');
+      if (e.keyCode == '74') key.classList.add('pressed');
+      if (e.keyCode == '75') key.classList.add('pressed');
+      if (e.keyCode == '76') key.classList.add('pressed');
+      if (e.keyCode == '186') key.classList.add('pressed');
+      if (e.keyCode == '222') key.classList.add('pressed');
+      if (e.keyCode == '16') key.classList.add('pressed');
+      if (e.keyCode == '90') key.classList.add('pressed');
+      if (e.keyCode == '88') key.classList.add('pressed');
+      if (e.keyCode == '67') key.classList.add('pressed');
+      if (e.keyCode == '86') key.classList.add('pressed');
+      if (e.keyCode == '66') key.classList.add('pressed');
+      if (e.keyCode == '78') key.classList.add('pressed');
+      if (e.keyCode == '77') key.classList.add('pressed');
+      if (e.keyCode == '188') key.classList.add('pressed');
+      if (e.keyCode == '190') key.classList.add('pressed');
+      if (e.keyCode == '191') key.classList.add('pressed');
+      if (e.keyCode == '32') key.classList.add('pressed');
+
+
+      if (e.keyCode == '192') key.focus();
+      if (e.keyCode == '49') key.focus();
+      if (e.keyCode == '50') key.focus();
+      if (e.keyCode == '51') key.focus();
+      if (e.keyCode == '52') key.focus();
+      if (e.keyCode == '53') key.focus();
+      if (e.keyCode == '54') key.focus();
+      if (e.keyCode == '55') key.focus();
+      if (e.keyCode == '56') key.focus();
+      if (e.keyCode == '57') key.focus();
+      if (e.keyCode == '48') key.focus();
+      if (e.keyCode == '81') key.focus();
+      if (e.keyCode == '87') key.focus();
+      if (e.keyCode == '69') key.focus();
+      if (e.keyCode == '82') key.focus();
+      if (e.keyCode == '84') key.focus();
+      if (e.keyCode == '89') key.focus();
+      if (e.keyCode == '85') key.focus();
+      if (e.keyCode == '73') key.focus();
+      if (e.keyCode == '79') key.focus();
+      if (e.keyCode == '80') key.focus();
+      if (e.keyCode == '219') key.focus();
+      if (e.keyCode == '221') key.focus();
+      if (e.keyCode == '220') key.focus();
+      if (e.keyCode == '65') key.focus();
+      if (e.keyCode == '83') key.focus();
+      if (e.keyCode == '68') key.focus();
+      if (e.keyCode == '70') key.focus();
+      if (e.keyCode == '71') key.focus();
+      if (e.keyCode == '72') key.focus();
+      if (e.keyCode == '74') key.focus();
+      if (e.keyCode == '75') key.focus();
+      if (e.keyCode == '76') key.focus();
+      if (e.keyCode == '186') key.focus();
+      if (e.keyCode == '222') key.focus();
+      if (e.keyCode == '16') key.focus();
+      if (e.keyCode == '90') key.focus();
+      if (e.keyCode == '88') key.focus();
+      if (e.keyCode == '67') key.focus();
+      if (e.keyCode == '86') key.focus();
+      if (e.keyCode == '66') key.focus();
+      if (e.keyCode == '78') key.focus();
+      if (e.keyCode == '77') key.focus();
+      if (e.keyCode == '188') key.focus();
+      if (e.keyCode == '190') key.focus();
+      if (e.keyCode == '191') key.focus();
+      if (e.keyCode == '32') key.focus();
+      // if (key) key.focus();
+
+    });
+
+
+    window.addEventListener("keyup", e => {
+    const key = document.getElementById("address");
+    if (e.keyCode == 13) key.classList.remove("pressed");
+    });
+    </script>
+
+
+    <div class="square"></div>
+
+    <div id="container">
+
+      <div id="street-view"></div>
+      <img class="eyeview" src="./images_info/eyeview1.png">
+      <img class="eyeview" src="./images_zero/zero3.png">
+
+      <div id="input" style="z-index: 8; width:100%;">
+      <div id="input" style="z-index: 8; width:50%; margin: 150px auto auto auto;">
+        <input id="address" class="input-text" type="text" onClick="this.select();" placeholder=" " />
+        <!-- <button id="btn">Get LatLong</button> -->
+        <div>
+
+          <p>
+            <input type="text" style="display: none;" id="latitude" readonly />
+          </p>
+          <p>
+            <input type="text" style="display: none;" id="longitude" readonly />
+          </p>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- <iframe src="map_location.html" style="border:0; z-index:9; position: fixed; width:60%; height: 400px; margin:auto; padding: 20px;" frameborder="0"></iframe>
+
+   <script type="module" src="script_maps_streetview.js"></script>
+   <div id="street-view"></div> -->
+   <!-- <div id="map"></div> -->
+
+
+   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYT0xiOxC3EscSZXaqt3qpFfZoJ7I918A&callback=initialize&v=weekly" defer></script> -->
+   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDp7HDe2bCF_67OXszDIycB3PQds-4jr5A&callback=initMap&v=weekly" defer></script> -->
+
+    <!-- Sound -->
+    <!-- <iframe src="./sound/silence.mp3" type=”audio/mp3″ allow="autoplay" id="audio" style="display: none"></iframe>
+    <audio autoplay loop>
+    <source src="./sound/wind1.wav" type="audio/mp3">
+    </audio> -->
+
+
+    <!-- <div id="capture_area">
+    캡쳐할 영역
+    </div> -->
+
+<!-- mapsConsumerUiSceneInternalCoreScene__canvas widget-scene-canvas -->
+    <style>
+    /* UI_btn: back */
+    .gm-iv-container {
+      display: none;
+    }
+    /* UI_btn: Full View */
+    .gm-control-active {
+      display: none;
+    }
+    /* UI_btn: Compass */
+    .gm-compass {
+      display: none;
+    }
+    /* UI_btn: Zoom In */
+    .gmnoprint {
+      display: none;
+    }
+    /* UI_watermark 1 */
+    .gm-style-cc {
+      display: none;
+    }
+    </style>
+
+    <!-- <script>
+    $(function(){
+        $(".btn_download").click(function(e){
+            html2canvas(document.getElementById("street-view")).then(function(canvas) {
+            // html2canvas(document.getElementsByClassName("gm-style")[0]).then(function(canvas) {
+                var el = document.createElement("a")
+                el.href = canvas.toDataURL("image/jpeg")
+                el.download = '이미지.jpg' //다운로드 할 파일명 설정
+                el.click()
+            })
+        })
+    })
+    </script> -->
+
+
+    <!-- <a id="target" style="display: none"></a>
+    <script>
+    $(":button").on('click', function(e) {
+      // html2canvas(e.target.parentElement).then(function(canvas) {
+      //   document.body.appendChild(canvas)
+      // });
+      // html2canvas(e.target.parentElement).then(function(canvas) {
+      //   $('body').append('<img src="' + canvas.toDataURL("image/jpeg") + '"/>');
+      // });
+
+      html2canvas(e.target.parentElement).then(function(canvas) {
+        if (navigator.msSaveBlob) {
+          var blob = canvas.msToBlob();
+          return navigator.msSaveBlob(blob, '파일명.jpg');
+        } else {
+          var el = document.getElementById("target");
+          el.href = canvas.toDataURL("image/jpeg");
+          el.download = '파일명.jpg';
+          el.click();
+        }
+      });
+    });
+    </script> -->
+  </body>
+</html>
