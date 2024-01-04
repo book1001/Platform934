@@ -123,12 +123,16 @@ function renderChannel(slug, page) {
                         ${block.title}
                       </p></a>
                       `;
-                      
+                    
                     case "Channel":
                       return `
-                      <a href="https://www.are.na/channel/${block.slug}" class="BlockInner__Channel" data-navigo>
-                        – ${block.title}
+                      <a href="https://www.are.na/channel/${block.slug}" class="BlockInner__Link" style="color: #ffffff;">
+                        <img class="BlockInner__Image" src="../img/arenabg_submit1.png">
                       </a>
+                      <a href="https://www.are.na/channel/${block.slug}">
+                        <p style="text-align: center; text-transform: uppercase;">
+                        ${block.title}
+                      </p></a>
                       `;
                   }
                 })()}
