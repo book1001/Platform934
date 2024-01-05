@@ -36,7 +36,12 @@ function menuProjects() {
 
 // Door ------------------------------------------------
 
-$('.d-btn#door1').addClass('menu-btn-upsidedown');
+function nine_ten() {
+  document.getElementById("nine_ten").style.display = "block";
+}
+
+
+$('#nine_ten').addClass('d-btn-upsidedown');
 
 $(".d-btn").click(function (e) {
     e.preventDefault();
@@ -47,26 +52,57 @@ $(".d-btn").click(function (e) {
     for(var i=0; i<btns2.length; i++) {
       var btn2 = btns2.eq(i);
       if(btn2[0] !== $(this)[0]) {
-        btn2.removeClass("menu-btn-upsidedown");
+        btn2.removeClass("d-btn-upsidedown");
         // $('.row1').addClass('show');
       }
     }
 
-    if($(this).hasClass("menu-btn-upsidedown")) {
-      $(this).removeClass("menu-btn-upsidedown");
+    if($(this).hasClass("d-btn-upsidedown")) {
+      $(this).removeClass("d-btn-upsidedown");
       // $('.row1').removeClass('show');
     }
     else {
-      $(this).addClass("menu-btn-upsidedown");
+      $(this).addClass("d-btn-upsidedown");
       // $('.row1').removeClass('show');
     }
 
     $('.'+this.id).slideToggle(0);
 });
 
-function mainDoor() {
-  document.getElementById("main-open").style.display = "none";
-}
+
+
+
+// $('.d-btn#door1').addClass('d-btn-upsidedown');
+
+// $(".d-btn").click(function (e) {
+//     e.preventDefault();
+
+//     $('[class^=door]').not($('.'+this.id)).hide();
+
+//     var btns2 = $(".d-btn");
+//     for(var i=0; i<btns2.length; i++) {
+//       var btn2 = btns2.eq(i);
+//       if(btn2[0] !== $(this)[0]) {
+//         btn2.removeClass("menu-btn-upsidedown");
+//         // $('.row1').addClass('show');
+//       }
+//     }
+
+//     if($(this).hasClass("menu-btn-upsidedown")) {
+//       $(this).removeClass("menu-btn-upsidedown");
+//       // $('.row1').removeClass('show');
+//     }
+//     else {
+//       $(this).addClass("menu-btn-upsidedown");
+//       // $('.row1').removeClass('show');
+//     }
+
+//     $('.'+this.id).slideToggle(0);
+// });
+
+// function mainDoor() {
+//   document.getElementById("main-open").style.display = "none";
+// }
 
 
 // Are na Selector ------------------------------------------------

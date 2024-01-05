@@ -99,6 +99,7 @@ img.right {
   position: fixed;
   top: 2px;
   left: 40px;
+  width: calc(100% - 120px);
   margin: 0;
   padding: 0;
   z-index: 8;
@@ -119,7 +120,7 @@ img.right {
 .menu-top-right-right {
   position: fixed;
   top: 2px;
-  right: 40px;
+  right: 25px;
   /* right: 20px; */
   margin: 0;
   padding: 0;
@@ -247,6 +248,34 @@ img.right {
   border: none;
   background-color: transparent;
   cursor: pointer;
+}
+
+
+@media (hover: hover) {
+  .d-btn:hover {
+    color: #000000;
+    text-shadow: 0 0px 6px lightgray;
+    /* text-shadow: 0 0px 6px cyan; */
+    /* transform: scaleY(-1);
+    -webkit-transform: scaleY(-1); */
+  }
+  .blank:hover {
+    color: #000000;
+    text-shadow: 0 0px 6px yellow;
+  }
+}
+
+.d-btn-upsidedown {
+  color: #000000;
+  text-shadow: 0 0px 6px lightgray;
+}
+
+#nine_ten {
+ display: none;
+}
+
+.nine-ten-show {
+  display: block;
 }
 
 /* Menu: Children > Middle Door ================================================ */
