@@ -36,38 +36,38 @@ function menuProjects() {
 
 // Door ------------------------------------------------
 
-function nine_ten() {
-  document.getElementById("nine_ten").style.display = "block";
-}
+// function nine_ten() {
+//   document.getElementById("nine_ten").style.display = "block";
+// }
 
 
-$('#nine_ten').addClass('d-btn-upsidedown');
+// $('#nine_ten').addClass('d-btn-upsidedown');
 
-$(".d-btn").click(function (e) {
-    e.preventDefault();
+// $(".d-btn").click(function (e) {
+//     e.preventDefault();
 
-    $('[class^=door]').not($('.'+this.id)).hide();
+//     $('[class^=door]').not($('.'+this.id)).hide();
 
-    var btns2 = $(".d-btn");
-    for(var i=0; i<btns2.length; i++) {
-      var btn2 = btns2.eq(i);
-      if(btn2[0] !== $(this)[0]) {
-        btn2.removeClass("d-btn-upsidedown");
-        // $('.row1').addClass('show');
-      }
-    }
+//     var btns2 = $(".d-btn");
+//     for(var i=0; i<btns2.length; i++) {
+//       var btn2 = btns2.eq(i);
+//       if(btn2[0] !== $(this)[0]) {
+//         btn2.removeClass("d-btn-upsidedown");
+//         // $('.row1').addClass('show');
+//       }
+//     }
 
-    if($(this).hasClass("d-btn-upsidedown")) {
-      $(this).removeClass("d-btn-upsidedown");
-      // $('.row1').removeClass('show');
-    }
-    else {
-      $(this).addClass("d-btn-upsidedown");
-      // $('.row1').removeClass('show');
-    }
+//     if($(this).hasClass("d-btn-upsidedown")) {
+//       $(this).removeClass("d-btn-upsidedown");
+//       // $('.row1').removeClass('show');
+//     }
+//     else {
+//       $(this).addClass("d-btn-upsidedown");
+//       // $('.row1').removeClass('show');
+//     }
 
-    $('.'+this.id).slideToggle(0);
-});
+//     $('.'+this.id).slideToggle(0);
+// });
 
 
 

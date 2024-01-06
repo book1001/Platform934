@@ -170,7 +170,7 @@
 
   .menu-top-left {
     left: 0;
-    width: 100%;
+    /* width: 100%; */
     padding: 0 28px 0 28px;
   }
 
@@ -181,9 +181,9 @@
   }
 
 
-  .d-btn {
+  /* .d-btn {
     display: none;
-  }
+  } */
 
   .row1 {
     min-width: auto;

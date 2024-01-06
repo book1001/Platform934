@@ -99,7 +99,7 @@ img.right {
   position: fixed;
   top: 2px;
   left: 40px;
-  width: calc(100% - 120px);
+  /* width: calc(100% - 120px); */
   margin: 0;
   padding: 0;
   z-index: 8;
@@ -270,13 +270,13 @@ img.right {
   text-shadow: 0 0px 6px lightgray;
 }
 
-#nine_ten {
+/* #nine_ten {
  display: none;
 }
 
 .nine-ten-show {
   display: block;
-}
+} */
 
 /* Menu: Children > Middle Door ================================================ */
 

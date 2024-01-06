@@ -116,9 +116,9 @@ function renderChannel(slug, page) {
                       
                     case "Media":
                       return `
-                      <div class="BlockInner__Media">
-                        ${block.embed.html}
-                      </div>
+                      <a href="${block.source && block.source.url}" class="BlockInner__Link">
+                        <img class="BlockInner__Image" src="${block.image.large.url}"/>
+                      </a>
                       <a href="https://www.are.na/block/${block.id}"><p style="text-align: center; text-transform: uppercase;">
                         ${block.title}
                       </p></a>
