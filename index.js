@@ -146,74 +146,74 @@ function p2_infiniteFigures_2() {
 function p3_ghosts_1() {
   document.getElementById("p3_ghosts_1").style.display = "block";
   document.getElementById("p3_ghosts_2").style.display = "none";
-  document.getElementById("p3_ghosts_3").style.display = "none";
+  // document.getElementById("p3_ghosts_3").style.display = "none";
   document.getElementById("btn_p3_1").style.color = "#000000";
   document.getElementById("btn_p3_1").style.textShadow = "0 0 6px #f595f3";
   document.getElementById("btn_p3_2").style.color = "#ffffff";
   document.getElementById("btn_p3_2").style.textShadow = "none";
-  document.getElementById("btn_p3_3").style.color = "#ffffff";
-  document.getElementById("btn_p3_3").style.textShadow = "none";
+  // document.getElementById("btn_p3_3").style.color = "#ffffff";
+  // document.getElementById("btn_p3_3").style.textShadow = "none";
 }
 
 function p3_ghosts_2() {
   document.getElementById("p3_ghosts_1").style.display = "none";
   document.getElementById("p3_ghosts_2").style.display = "block";
-  document.getElementById("p3_ghosts_3").style.display = "none";
+  // document.getElementById("p3_ghosts_3").style.display = "none";
   document.getElementById("btn_p3_1").style.color = "#ffffff";
   document.getElementById("btn_p3_1").style.textShadow = "none";
   document.getElementById("btn_p3_2").style.color = "#000000";
   document.getElementById("btn_p3_2").style.textShadow = "0 0 6px #f595f3";
-  document.getElementById("btn_p3_3").style.color = "#ffffff";
-  document.getElementById("btn_p3_3").style.textShadow = "none";
+  // document.getElementById("btn_p3_3").style.color = "#ffffff";
+  // document.getElementById("btn_p3_3").style.textShadow = "none";
 }
 
-function p3_ghosts_3() {
-  document.getElementById("p3_ghosts_1").style.display = "none";
-  document.getElementById("p3_ghosts_2").style.display = "none";
-  document.getElementById("p3_ghosts_3").style.display = "block";
-  document.getElementById("btn_p3_1").style.color = "#ffffff";
-  document.getElementById("btn_p3_1").style.textShadow = "none";
-  document.getElementById("btn_p3_2").style.color = "#ffffff";
-  document.getElementById("btn_p3_2").style.textShadow = "none";
-  document.getElementById("btn_p3_3").style.color = "#000000";
-  document.getElementById("btn_p3_3").style.textShadow = "0 0 6px #f595f3";
-}
+// function p3_ghosts_3() {
+//   document.getElementById("p3_ghosts_1").style.display = "none";
+//   document.getElementById("p3_ghosts_2").style.display = "none";
+//   document.getElementById("p3_ghosts_3").style.display = "block";
+//   document.getElementById("btn_p3_1").style.color = "#ffffff";
+//   document.getElementById("btn_p3_1").style.textShadow = "none";
+//   document.getElementById("btn_p3_2").style.color = "#ffffff";
+//   document.getElementById("btn_p3_2").style.textShadow = "none";
+//   document.getElementById("btn_p3_3").style.color = "#000000";
+//   document.getElementById("btn_p3_3").style.textShadow = "0 0 6px #f595f3";
+// }
 
 function p4_platform_1() {
   document.getElementById("p4_platform_1").style.display = "block";
   document.getElementById("p4_platform_2").style.display = "none";
-  document.getElementById("p4_platform_3").style.display = "none";
+  // document.getElementById("p4_platform_3").style.display = "none";
   document.getElementById("btn_p4_1").style.color = "#000000";
   document.getElementById("btn_p4_1").style.textShadow = "0 0 6px #f595f3";
   document.getElementById("btn_p4_2").style.color = "#ffffff";
   document.getElementById("btn_p4_2").style.textShadow = "none";
-  document.getElementById("btn_p4_3").style.color = "#ffffff";
-  document.getElementById("btn_p4_3").style.textShadow = "none";
+  // document.getElementById("btn_p4_3").style.color = "#ffffff";
+  // document.getElementById("btn_p4_3").style.textShadow = "none";
 }
 
 function p4_platform_2() {
   document.getElementById("p4_platform_1").style.display = "none";
   document.getElementById("p4_platform_2").style.display = "block";
-  document.getElementById("p4_platform_3").style.display = "none";
+  // document.getElementById("p4_platform_3").style.display = "none";
   document.getElementById("btn_p4_1").style.color = "#ffffff";
   document.getElementById("btn_p4_1").style.textShadow = "none";
   document.getElementById("btn_p4_2").style.color = "#000000";
   document.getElementById("btn_p4_2").style.textShadow = "0 0 6px #f595f3";
-  document.getElementById("btn_p4_3").style.color = "#ffffff";
-  document.getElementById("btn_p4_3").style.textShadow = "none";
+  // document.getElementById("btn_p4_3").style.color = "#ffffff";
+  // document.getElementById("btn_p4_3").style.textShadow = "none";
 }
 
-function p4_platform_3() {
-  document.getElementById("p4_platform_1").style.display = "none";
-  document.getElementById("p4_platform_2").style.display = "none";
-  document.getElementById("p4_platform_3").style.display = "block";
-  document.getElementById("btn_p4_1").style.color = "#ffffff";
-  document.getElementById("btn_p4_1").style.textShadow = "none";
-  document.getElementById("btn_p4_2").style.color = "#ffffff";
-  document.getElementById("btn_p4_2").style.textShadow = "none";
-  document.getElementById("btn_p4_3").style.color = "#000000";
-  document.getElementById("btn_p4_3").style.textShadow = "0 0 6px #f595f3";
-}
+// function p4_platform_3() {
+//   document.getElementById("p4_platform_1").style.display = "none";
+//   document.getElementById("p4_platform_2").style.display = "none";
+//   document.getElementById("p4_platform_3").style.display = "block";
+//   document.getElementById("btn_p4_1").style.color = "#ffffff";
+//   document.getElementById("btn_p4_1").style.textShadow = "none";
+//   document.getElementById("btn_p4_2").style.color = "#ffffff";
+//   document.getElementById("btn_p4_2").style.textShadow = "none";
+//   document.getElementById("btn_p4_3").style.color = "#000000";
+//   document.getElementById("btn_p4_3").style.textShadow = "0 0 6px #f595f3";
+// }
 
 
 // Menu Buttons ------------------------------------------------

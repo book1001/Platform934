@@ -140,7 +140,8 @@ function renderChannel(slug, page) {
             `;
           }).join("")}`;
     
-    let contents = document.getElementsByClassName("ChannelContents-3")[0];
+    let contents = document.getElementsByClassName("ChannelContents")[0];
+    // let contents = document.getElementsByClassName("ChannelContents-3")[0];
     contents.insertAdjacentHTML("beforeend", elements);
   
   })
