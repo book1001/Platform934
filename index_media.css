@@ -226,9 +226,10 @@
   }
   
   .scrollContents-margin {
+    width: 100%;
     top: 0;
     height: 100svh;
-    padding: 0 20px 0 0;
+    padding: 0 34px 0 0;
   }
 
   .iframe-full {
