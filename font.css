@@ -192,6 +192,7 @@ ul.bullet li::before {
 }
 
 ul.bullet li.link::before {
+  font-family: FKGroteskSemiMonoTrial-Regular,sans-serif !important; 
   content: '–';
   margin-left: -20px;
   margin-right: 8px;
@@ -238,7 +239,8 @@ ul.bulletG2 li::before {
 }
 
 ul.bulletS{
-  font-family: FKGroteskSemiMonoTrial-Regular,sans-serif;
+  font-family: ABCArizona, serif;
+  /* font-family: FKGroteskSemiMonoTrial-Regular,sans-serif; */
   list-style:none;
   /* padding-left:0px; */
   margin-block-start: 0;
