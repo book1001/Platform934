@@ -9,7 +9,12 @@
     font-size: 0;
   } */
   
- 
+  .BlockInner__Text {
+    left: 0;
+    transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+  }
 
   p, h3 { 
     font-size: 15px;
