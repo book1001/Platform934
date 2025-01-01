@@ -565,8 +565,9 @@ iframe{
   z-index: 7;
   /* backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px); */
-  overflow: hidden;
-  border-left: black 1px solid;
+  /* border-left: black 1px solid; */
+  mix-blend-mode: difference;
+  color: #ffffff;
 }
 
 
