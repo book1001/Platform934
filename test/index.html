@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+
+  <title>Touch Lottie</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    #stage {
+      position: fixed;
+      inset: 0;
+
+      /* 터치 시 스크롤·확대 방지 */
+      touch-action: none;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;
+    }
+
+    .lottie-instance {
+      position: absolute;
+      transform: translate(-50%, -50%);
+
+      /* 애니메이션이 터치 이벤트를 가로채지 않도록 */
+      pointer-events: none;
+    }
+
+    #status {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font: 14px sans-serif;
+      color: #777;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body>
+  <main id="stage">
+    <div id="status">애니메이션 불러오는 중…</div>
+  </main>
+
+  <script>
+    // ─────────────────────────────────
+    // 설정
+    // ─────────────────────────────────
+    const LOTTIE_PATH = "./test01.json";
+    const ANIMATION_WIDTH = 400; // 애니메이션 가로 크기(px)
+    const FOLLOW_FINGER = false; // true: 손가락 이동을 따라감
+
+    const stage = document.querySelector("#stage");
+    const status = document.querySelector("#status");
+
+    // 손가락 ID별 애니메이션 저장
+    const activeAnimations = new Map();
+
+    let animationData = null;
+
+    // JSON을 미리 한 번 불러오기
+    async function preload() {
+      try {
+        const response = await fetch(LOTTIE_PATH);
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+
+        animationData = await response.json();
+        status.remove();
+      } catch (error) {
+        status.textContent =
+          "로티 파일을 불러오지 못했어요. 파일 경로를 확인해주세요.";
+        console.error(error);
+      }
+    }
+
+    function removeAnimation(pointerId) {
+      const item = activeAnimations.get(pointerId);
+      if (!item) return;
+
+      activeAnimations.delete(pointerId);
+
+      item.animation.destroy();
+      item.element.remove();
+    }
+
+    function clearAnimations() {
+      for (const pointerId of activeAnimations.keys()) {
+        removeAnimation(pointerId);
+      }
+    }
+
+    stage.addEventListener("pointerdown", (event) => {
+      if (event.pointerType === "mouse" && event.button !== 0) return;
+      if (!animationData) return;
+
+      event.preventDefault();
+
+      // 영역 밖에서 손을 떼어도 이벤트를 받을 수 있도록
+      stage.setPointerCapture(event.pointerId);
+
+      removeAnimation(event.pointerId);
+
+      const element = document.createElement("div");
+      element.className = "lottie-instance";
+
+      // 원본 애니메이션의 비율 유지
+      const height =
+        ANIMATION_WIDTH * animationData.h / animationData.w;
+
+      element.style.width = `${ANIMATION_WIDTH}px`;
+      element.style.height = `${height}px`;
+      element.style.left = `${event.clientX}px`;
+      element.style.top = `${event.clientY}px`;
+
+      stage.appendChild(element);
+
+      const animation = lottie.loadAnimation({
+        container: element,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+
+        // 각 인스턴스가 독립적인 데이터를 사용
+        animationData: structuredClone(animationData)
+      });
+
+      activeAnimations.set(event.pointerId, {
+        element,
+        animation
+      });
+    });
+
+    stage.addEventListener("pointermove", (event) => {
+      if (!FOLLOW_FINGER) return;
+
+      const item = activeAnimations.get(event.pointerId);
+      if (!item) return;
+
+      item.element.style.left = `${event.clientX}px`;
+      item.element.style.top = `${event.clientY}px`;
+    });
+
+    // 손가락을 떼거나 터치가 취소되면 제거
+    for (const eventName of [
+      "pointerup",
+      "pointercancel",
+      "lostpointercapture"
+    ]) {
+      stage.addEventListener(eventName, (event) => {
+        removeAnimation(event.pointerId);
+      });
+    }
+
+    // 앱 전환 등으로 터치가 끊긴 경우 정리
+    window.addEventListener("blur", clearAnimations);
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) clearAnimations();
+    });
+
+    stage.addEventListener("contextmenu", (event) => {
+      event.preventDefault();
+    });
+
+    preload();
+  </script>
+</body>
+</html>
