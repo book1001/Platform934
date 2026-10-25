@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+  <title>Touch Lottie</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: white;
+    }
+
+    #stage {
+      position: fixed;
+      inset: 0;
+      touch-action: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .animation {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    #status {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      right: 16px;
+      z-index: 100;
+      font: 14px/1.6 sans-serif;
+      color: #555;
+      white-space: pre-wrap;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="stage"></div>
+  <div id="status">로딩 중…</div>
+
+  <script>
+    const LOTTIE_URL = "./test03.json";
+
+    const SIZE = 800;
+    const FOLLOW_POINTER = false;
+
+    const stage = document.querySelector("#stage");
+    const status = document.querySelector("#status");
+    const active = new Map();
+
+    let animationData = null;
+
+    function report(message, error) {
+      status.textContent = message;
+      if (error) console.error(message, error);
+    }
+
+    function loadPlayer() {
+      return new Promise((resolve, reject) => {
+        if (window.lottie) {
+          resolve();
+          return;
+        }
+
+        const script = document.createElement("script");
+
+        script.src =
+          "https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js";
+
+        script.onload = () => {
+          if (window.lottie) resolve();
+          else reject(new Error("로티 플레이어 초기화 실패"));
+        };
+
+        script.onerror = () => {
+          reject(new Error(
+            "로티 플레이어 다운로드 실패. 인터넷 연결 또는 CDN 차단을 확인해주세요."
+          ));
+        };
+
+        document.head.appendChild(script);
+      });
+    }
+
+    async function loadData() {
+      const url = new URL(LOTTIE_URL, document.baseURI);
+
+      const response = await fetch(url);
+
+      if (!response.ok) {
+        throw new Error(
+          `JSON 로딩 실패: HTTP ${response.status}\n${url.href}`
+        );
+      }
+
+      const data = await response.json();
+
+      if (
+        !Array.isArray(data.layers) ||
+        !(data.w > 0) ||
+        !(data.h > 0)
+      ) {
+        throw new Error("유효한 로티 JSON 파일이 아닙니다.");
+      }
+
+      return data;
+    }
+
+    async function init() {
+      try {
+        if (location.protocol === "file:") {
+          throw new Error(
+            "현재 HTML을 파일로 직접 열었습니다.\n" +
+            "JSON 자동 로딩을 위해 로컬 서버나 웹사이트에서 열어주세요."
+          );
+        }
+
+        report("플레이어와 JSON 파일 불러오는 중…");
+
+        const [, data] = await Promise.all([
+          loadPlayer(),
+          loadData()
+        ]);
+
+        animationData = data;
+
+        report("준비 완료! 화면을 클릭하거나 터치한 채 유지하세요.");
+      } catch (error) {
+        report(
+          `${error.message}\n\n` +
+          "index.html과 Attractor Field.json이 같은 폴더에 있는지 확인해주세요.\n" +
+          "자세한 오류는 개발자 도구의 Console에서 확인할 수 있어요.",
+          error
+        );
+      }
+    }
+
+    function removeAnimation(id) {
+      const item = active.get(id);
+      if (!item) return;
+
+      active.delete(id);
+      item.animation.destroy();
+      item.element.remove();
+    }
+
+    function clearAll() {
+      for (const id of [...active.keys()]) {
+        removeAnimation(id);
+      }
+    }
+
+    stage.addEventListener("pointerdown", (event) => {
+      // 왼쪽 클릭, 터치, 펜만 처리. 우클릭은 그대로 허용.
+      if (event.button !== 0) return;
+
+      if (!animationData || !window.lottie) {
+        console.warn("로티가 아직 준비되지 않았습니다.");
+        return;
+      }
+
+      stage.setPointerCapture(event.pointerId);
+      removeAnimation(event.pointerId);
+
+      const element = document.createElement("div");
+      element.className = "animation";
+
+      element.style.width = `${SIZE}px`;
+      element.style.height =
+        `${SIZE * animationData.h / animationData.w}px`;
+
+      element.style.left = `${event.clientX}px`;
+      element.style.top = `${event.clientY}px`;
+
+      stage.appendChild(element);
+
+      try {
+        const animation = lottie.loadAnimation({
+          container: element,
+          renderer: "svg",
+          loop: true,
+          autoplay: true,
+          animationData: JSON.parse(JSON.stringify(animationData))
+        });
+
+        active.set(event.pointerId, { animation, element });
+
+        animation.addEventListener("data_failed", () => {
+          report("로티 렌더링에 실패했습니다.");
+          removeAnimation(event.pointerId);
+        });
+      } catch (error) {
+        element.remove();
+        report(`재생 오류: ${error.message}`, error);
+      }
+    });
+
+    stage.addEventListener("pointermove", (event) => {
+      if (!FOLLOW_POINTER) return;
+
+      const item = active.get(event.pointerId);
+      if (!item) return;
+
+      item.element.style.left = `${event.clientX}px`;
+      item.element.style.top = `${event.clientY}px`;
+    });
+
+    window.addEventListener("pointerup", (event) => {
+      removeAnimation(event.pointerId);
+    });
+
+    window.addEventListener("pointercancel", (event) => {
+      removeAnimation(event.pointerId);
+    });
+
+    stage.addEventListener("lostpointercapture", (event) => {
+      removeAnimation(event.pointerId);
+    });
+
+    window.addEventListener("blur", clearAll);
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) clearAll();
+    });
+
+    init();
+  </script>
+</body>
+</html>
